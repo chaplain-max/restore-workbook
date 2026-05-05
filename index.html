@@ -3,1120 +3,531 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RESTORE — 3-Day Peer Workforce Development Program</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>RESTORE — Student Study Guide &amp; Workbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #1A3A5C;
-    --navy-deep: #0F2540;
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --gold-pale: #FDF3DC;
-    --blue-light: #D6E4F0;
-    --blue-mid: #4A7EAA;
-    --cream: #FAFAF7;
-    --gray-dark: #333;
-    --gray-mid: #666;
-    --gray-light: #f0f0ec;
-    --white: #ffffff;
-    --radius: 4px;
-    --shadow: 0 2px 20px rgba(26,58,92,0.10);
-    --shadow-lg: 0 8px 40px rgba(26,58,92,0.16);
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+:root{
+  --navy:#1A3A5C;--navy-deep:#0F2540;--gold:#C9A84C;--gold-light:#E8C97A;
+  --gold-pale:#FDF8EC;--blue-light:#D6E4F0;--blue-mid:#4A7EAA;
+  --green:#2E7D5E;--green-light:#E8F5EF;--red:#C0392B;--red-light:#FDECEA;
+  --cream:#FAFAF7;--gray-dark:#2C2C2C;--gray:#555;--gray-light:#F2F2EE;
+  --white:#fff;--radius:6px;
+  --shadow:0 2px 16px rgba(26,58,92,.09);--shadow-lg:0 8px 36px rgba(26,58,92,.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--gray-dark);font-size:15px;line-height:1.7;overflow-x:hidden;}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--gray-dark);
-    font-size: 15px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+/* HEADER */
+.site-header{background:var(--navy-deep);position:sticky;top:0;z-index:200;border-bottom:2px solid var(--gold);box-shadow:0 2px 20px rgba(0,0,0,.3);}
+.header-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:58px;gap:12px;}
+.header-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--white);white-space:nowrap;}
+.header-logo span{color:var(--gold);}
+.header-badge{background:var(--gold);color:var(--navy-deep);font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:2px;white-space:nowrap;}
+.prog-wrap{flex:1;max-width:240px;display:flex;align-items:center;gap:8px;}
+.prog-bg{flex:1;height:6px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden;}
+.prog-fill{height:100%;background:var(--gold);border-radius:3px;transition:width .4s;}
+.prog-txt{font-size:.7rem;color:rgba(255,255,255,.55);white-space:nowrap;}
 
-  /* ── HEADER ── */
-  .site-header {
-    background: var(--navy-deep);
-    position: sticky; top: 0; z-index: 100;
-    border-bottom: 2px solid var(--gold);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-  }
-  .header-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 2rem; height: 60px;
-  }
-  .header-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem; font-weight: 700;
-    color: var(--white); letter-spacing: 0.02em;
-  }
-  .header-logo span { color: var(--gold); }
-  .header-nav { display: flex; gap: 6px; flex-wrap: wrap; }
-  .nav-btn {
-    background: transparent; border: 1px solid rgba(201,168,76,0.35);
-    color: rgba(255,255,255,0.75); font-family: 'DM Sans', sans-serif;
-    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em;
-    text-transform: uppercase; padding: 5px 12px; border-radius: 2px;
-    cursor: pointer; transition: all 0.2s;
-  }
-  .nav-btn:hover, .nav-btn.active {
-    background: var(--gold); border-color: var(--gold);
-    color: var(--navy-deep); font-weight: 600;
-  }
+/* HERO */
+.hero{background:var(--navy);color:var(--white);text-align:center;padding:64px 1.5rem 52px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,.025) 40px,rgba(201,168,76,.025) 41px);}
+.hero-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:5px 16px;border-radius:2px;margin-bottom:20px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,5vw,3.4rem);font-weight:700;line-height:1.15;margin-bottom:12px;}
+.hero h1 em{color:var(--gold);font-style:italic;}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.72);max-width:580px;margin:0 auto 28px;}
+.hero-stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;}
+.h-stat{text-align:center;}
+.h-stat-n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1;}
+.h-stat-l{font-size:.72rem;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase;}
+.hero-quote{background:rgba(201,168,76,.12);border-top:1px solid rgba(201,168,76,.25);border-bottom:1px solid rgba(201,168,76,.25);padding:16px 1.5rem;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.85);margin-top:36px;}
 
-  /* ── HERO ── */
-  .hero {
-    background: var(--navy);
-    background-image:
-      radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(74,126,170,0.15) 0%, transparent 50%);
-    color: var(--white); text-align: center;
-    padding: 72px 2rem 60px;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent, transparent 40px,
-      rgba(201,168,76,0.025) 40px, rgba(201,168,76,0.025) 41px
-    );
-  }
-  .hero-tag {
-    display: inline-block;
-    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--gold);
-    border: 1px solid rgba(201,168,76,0.4);
-    padding: 5px 16px; border-radius: 2px; margin-bottom: 24px;
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700;
-    line-height: 1.15; margin-bottom: 14px; color: var(--white);
-  }
-  .hero h1 em { color: var(--gold); font-style: italic; }
-  .hero-sub {
-    font-size: 1.05rem; color: rgba(255,255,255,0.72); max-width: 600px;
-    margin: 0 auto 32px; line-height: 1.6;
-  }
-  .hero-meta {
-    display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
-    font-size: 0.8rem; color: rgba(255,255,255,0.55); letter-spacing: 0.04em;
-  }
-  .hero-meta span { display: flex; align-items: center; gap: 6px; }
-  .hero-meta strong { color: var(--gold-light); }
-  .quote-bar {
-    background: rgba(201,168,76,0.12);
-    border-top: 1px solid rgba(201,168,76,0.25);
-    border-bottom: 1px solid rgba(201,168,76,0.25);
-    padding: 16px 2rem; text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem; font-style: italic;
-    color: rgba(255,255,255,0.85);
-    margin-top: 40px;
-  }
+/* LAYOUT */
+.app-wrap{max-width:1160px;margin:0 auto;padding:0 1.5rem;}
+.day-tabs{display:flex;gap:0;border-bottom:2px solid var(--blue-light);margin-top:32px;overflow-x:auto;}
+.day-tab{background:transparent;border:none;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:700;color:var(--gray);padding:12px 22px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px;}
+.day-tab .dtn{width:22px;height:22px;border-radius:50%;background:var(--gray-light);font-size:.7rem;display:flex;align-items:center;justify-content:center;font-weight:800;transition:all .2s;}
+.day-tab:hover{color:var(--navy);}
+.day-tab.active{color:var(--navy);border-bottom-color:var(--gold);}
+.day-tab.active .dtn{background:var(--gold);color:var(--navy-deep);}
+.day-panel{display:none;padding:32px 0 80px;animation:fadeUp .3s ease;}
+.day-panel.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
-  /* ── TABS ── */
-  .tabs-wrapper {
-    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
-  }
-  .tabs-row {
-    display: flex; gap: 0; border-bottom: 2px solid var(--blue-light);
-    margin-top: 40px; overflow-x: auto;
-  }
-  .tab {
-    background: transparent; border: none;
-    font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
-    font-weight: 600; letter-spacing: 0.03em;
-    color: var(--gray-mid); padding: 14px 24px; cursor: pointer;
-    border-bottom: 3px solid transparent; margin-bottom: -2px;
-    transition: all 0.2s; white-space: nowrap;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .tab .tab-num {
-    width: 22px; height: 22px; border-radius: 50%;
-    background: var(--gray-light); font-size: 0.72rem;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; transition: all 0.2s;
-  }
-  .tab:hover { color: var(--navy); }
-  .tab.active {
-    color: var(--navy); border-bottom-color: var(--gold);
-  }
-  .tab.active .tab-num {
-    background: var(--gold); color: var(--navy-deep);
-  }
-  .panel { display: none; padding: 36px 0 60px; }
-  .panel.active { display: block; animation: fadeUp 0.3s ease; }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+/* DAY HEADER */
+.day-hdr{background:var(--navy);border-radius:var(--radius);padding:26px 32px;margin-bottom:28px;position:relative;overflow:hidden;}
+.day-hdr::after{content:attr(data-day);position:absolute;right:24px;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:7rem;font-weight:700;color:rgba(201,168,76,.12);line-height:1;pointer-events:none;}
+.day-lbl{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.day-ttl{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;color:var(--white);margin-bottom:6px;}
+.day-dsc{font-size:.9rem;color:rgba(255,255,255,.65);max-width:700px;}
 
-  /* ── SECTION TITLES ── */
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem; font-weight: 700; color: var(--navy);
-    margin-bottom: 6px; line-height: 1.2;
-  }
-  .section-rule {
-    width: 48px; height: 3px; background: var(--gold); margin: 10px 0 20px;
-  }
-  .section-sub { font-size: 0.95rem; color: var(--gray-mid); max-width: 680px; }
+/* MODULE CARD */
+.module-grid{display:flex;flex-direction:column;gap:18px;}
+.mc{background:var(--white);border:1px solid #E2E2DC;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s;}
+.mc:hover{box-shadow:var(--shadow-lg);}
+.mc-hdr{display:flex;align-items:center;gap:14px;padding:18px 22px;border-left:5px solid var(--gold);cursor:pointer;user-select:none;transition:background .15s;}
+.mc-hdr:hover{background:var(--gold-pale);}
+.mc.open .mc-hdr{background:var(--gold-pale);}
+.mc-code{background:var(--navy);color:var(--gold);font-size:.7rem;font-weight:800;letter-spacing:.08em;padding:5px 11px;border-radius:3px;white-space:nowrap;}
+.mc-tw{flex:1;}
+.mc-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--navy);}
+.mc-pts{display:flex;gap:5px;flex-wrap:wrap;margin-top:3px;}
+.mc-pt{font-size:.65rem;font-weight:700;letter-spacing:.06em;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.28);color:var(--gold);padding:2px 8px;border-radius:2px;}
+.mc-dots{display:flex;align-items:center;gap:5px;}
+.sdot{width:9px;height:9px;border-radius:50%;background:#D0D0CC;transition:background .2s;}
+.sdot.done{background:var(--green);}
+.sdot.partial{background:var(--gold);}
+.mc-chev{color:var(--gold);font-size:.9rem;transition:transform .25s;flex-shrink:0;}
+.mc.open .mc-chev{transform:rotate(180deg);}
+.mc-body{display:none;border-top:1px solid #EBEBEB;}
+.mc.open .mc-body{display:block;}
 
-  /* ── CARDS ── */
-  .card-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px; margin-top: 24px;
-  }
-  .card {
-    background: var(--white); border: 1px solid #e8e8e4;
-    border-radius: var(--radius); padding: 22px 20px;
-    box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-  .card-icon { font-size: 1.6rem; margin-bottom: 10px; }
-  .card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;
-  }
-  .card p { font-size: 0.875rem; color: var(--gray-mid); line-height: 1.55; }
-  .card.navy-card {
-    background: var(--navy); color: var(--white); border-color: var(--navy);
-  }
-  .card.navy-card h3 { color: var(--gold-light); }
-  .card.navy-card p { color: rgba(255,255,255,0.75); }
-  .card.gold-card {
-    background: var(--gold-pale); border-color: rgba(201,168,76,0.3);
-  }
-  .card.gold-card h3 { color: var(--navy); }
+/* SECTION TABS */
+.stabs{display:flex;border-bottom:1px solid #E8E8E4;background:#FAFAFA;overflow-x:auto;}
+.stab{background:transparent;border:none;font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gray);padding:12px 18px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s;white-space:nowrap;}
+.stab:hover{color:var(--navy);}
+.stab.active{color:var(--navy);border-bottom-color:var(--gold);}
+.spanel{display:none;padding:24px;}
+.spanel.active{display:block;animation:fadeUp .2s ease;}
 
-  /* ── DAY HEADER ── */
-  .day-header {
-    background: var(--navy);
-    background-image: radial-gradient(ellipse at 10% 50%, rgba(201,168,76,0.12) 0%, transparent 60%);
-    border-radius: var(--radius); padding: 28px 32px;
-    margin-bottom: 30px; position: relative; overflow: hidden;
-  }
-  .day-header::after {
-    content: attr(data-day);
-    position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
-    font-family: 'Cormorant Garamond', serif; font-size: 6rem; font-weight: 700;
-    color: rgba(201,168,76,0.15); line-height: 1; pointer-events: none;
-  }
-  .day-label {
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
-  }
-  .day-title {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.75rem;
-    font-weight: 700; color: var(--white); margin-bottom: 8px;
-  }
-  .day-phases {
-    display: flex; gap: 8px; flex-wrap: wrap;
-  }
-  .phase-tag {
-    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em;
-    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35);
-    color: var(--gold-light); padding: 3px 10px; border-radius: 2px;
-  }
+/* ANECDOTE */
+.anec-box{background:var(--navy);border-radius:var(--radius);padding:22px 24px;}
+.anec-lbl{font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.anec-lbl::before{content:'😄';font-size:1rem;}
+.anec-txt{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.7;font-style:italic;}
+.nav-btn-wrap{margin-top:16px;text-align:right;}
 
-  /* ── SCHEDULE TABLE ── */
-  .schedule-wrap { overflow-x: auto; margin: 24px 0; }
-  table {
-    width: 100%; border-collapse: collapse; font-size: 0.85rem;
-    background: var(--white); border-radius: var(--radius);
-    overflow: hidden; box-shadow: var(--shadow);
-  }
-  thead tr { background: var(--navy); }
-  thead th {
-    color: var(--white); font-weight: 600; text-align: left;
-    padding: 12px 14px; font-size: 0.78rem; letter-spacing: 0.04em;
-    white-space: nowrap;
-  }
-  tbody tr { border-bottom: 1px solid #eee; transition: background 0.15s; }
-  tbody tr:hover { background: var(--gold-pale); }
-  tbody tr:last-child { border-bottom: none; }
-  tbody td { padding: 10px 14px; color: var(--gray-dark); vertical-align: top; line-height: 1.45; }
-  tbody td:first-child { white-space: nowrap; font-weight: 600; color: var(--navy); font-size: 0.78rem; }
-  tbody td.format-cell { color: var(--blue-mid); font-size: 0.82rem; }
-  tbody td.note-cell { color: var(--gray-mid); font-style: italic; font-size: 0.8rem; }
-  .break-row td { color: var(--gray-mid); font-style: italic; background: var(--gray-light); }
+/* LESSON */
+.lesson h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin:18px 0 8px;}
+.lesson p{font-size:.93rem;color:var(--gray);line-height:1.75;margin-bottom:12px;}
+.lesson ul{padding-left:20px;margin-bottom:14px;}
+.lesson li{font-size:.93rem;color:var(--gray);line-height:1.65;margin-bottom:6px;}
+.lesson strong{color:var(--navy);}
+.fn-box{background:#F0F4F8;border:1px solid #C8D8E8;border-left:4px solid var(--blue-mid);border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:18px 0 0;}
+.fn-lbl{font-size:.65rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:6px;}
+.fn-txt{font-size:.88rem;color:var(--gray-dark);line-height:1.65;}
 
-  /* ── MODULE CARDS ── */
-  .module-list { display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
-  .module-card {
-    background: var(--white); border: 1px solid #e8e8e4;
-    border-radius: var(--radius); overflow: hidden;
-    box-shadow: var(--shadow); cursor: pointer;
-  }
-  .module-card-header {
-    display: flex; align-items: center; gap: 14px;
-    padding: 16px 20px; border-left: 4px solid var(--gold);
-    transition: background 0.15s;
-  }
-  .module-card-header:hover { background: var(--gold-pale); }
-  .module-num {
-    background: var(--navy); color: var(--white);
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
-    padding: 4px 10px; border-radius: 2px; white-space: nowrap;
-  }
-  .module-title {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
-    font-weight: 700; color: var(--navy); flex: 1;
-  }
-  .module-chevron {
-    color: var(--gold); font-size: 1rem; transition: transform 0.25s;
-    flex-shrink: 0;
-  }
-  .module-card.open .module-chevron { transform: rotate(180deg); }
-  .module-card.open .module-card-header { background: var(--gold-pale); }
-  .module-body {
-    display: none; padding: 20px 24px; border-top: 1px solid #eee;
-    animation: fadeUp 0.25s ease;
-  }
-  .module-card.open .module-body { display: block; }
-  .principle-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
-  .ptag {
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;
-    background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3);
-    color: var(--gold); padding: 3px 9px; border-radius: 2px;
-  }
-  .ptag-label {
-    font-size: 0.7rem; color: var(--gray-mid); font-style: italic; padding: 3px 6px;
-  }
+/* QUIZ */
+.quiz-intro{font-size:.88rem;color:var(--gray);margin-bottom:18px;padding:12px 16px;background:var(--blue-light);border-radius:var(--radius);}
+.qlist{display:flex;flex-direction:column;gap:10px;}
+.qi{background:var(--gray-light);border-radius:var(--radius);padding:14px 16px;border:2px solid transparent;transition:all .2s;}
+.qi.correct{background:var(--green-light);border-color:var(--green);}
+.qi.incorrect{background:var(--red-light);border-color:var(--red);}
+.qi-top{display:flex;gap:12px;align-items:flex-start;}
+.qi-num{min-width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--white);font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.qi-q{font-size:.92rem;color:var(--gray-dark);line-height:1.5;flex:1;}
+.qi-btns{display:flex;gap:8px;margin-top:10px;margin-left:36px;}
+.qbtn{background:var(--white);border:2px solid #CCC;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:700;padding:5px 16px;border-radius:3px;cursor:pointer;transition:all .2s;}
+.qbtn:hover{border-color:var(--navy);color:var(--navy);}
+.qbtn.sel-t{background:var(--green);border-color:var(--green);color:var(--white);}
+.qbtn.sel-f{background:var(--red);border-color:var(--red);color:var(--white);}
+.qi-fb{margin-top:8px;margin-left:36px;font-size:.83rem;font-weight:700;display:none;}
+.qi-fb.show{display:block;}
+.qi-fb.right{color:var(--green);}
+.qi-fb.wrong{color:var(--red);}
+.qcontrols{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap;}
+.btn{font-family:'Nunito',sans-serif;font-weight:700;font-size:.85rem;padding:9px 22px;border-radius:3px;cursor:pointer;border:2px solid;transition:all .2s;}
+.btn-navy{background:var(--navy);border-color:var(--navy);color:var(--white);}
+.btn-navy:hover{background:var(--navy-deep);}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:var(--navy-deep);}
+.btn-gold:hover{background:var(--gold-light);}
+.btn-outline{background:transparent;border-color:var(--navy);color:var(--navy);}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.q-score{font-size:.95rem;font-weight:700;color:var(--navy);}
 
-  /* ── INFO BOX ── */
-  .info-box {
-    border-radius: var(--radius); padding: 18px 20px; margin: 16px 0;
-  }
-  .info-box.navy { background: var(--navy); }
-  .info-box.blue { background: var(--blue-light); }
-  .info-box.gold { background: var(--gold-pale); border-left: 3px solid var(--gold); }
-  .info-box h4 {
-    font-family: 'Cormorant Garamond', serif; font-size: 1rem;
-    font-weight: 700; margin-bottom: 10px;
-  }
-  .info-box.navy h4 { color: var(--gold-light); }
-  .info-box.blue h4 { color: var(--navy); }
-  .info-box.gold h4 { color: var(--navy); }
-  .info-box.navy p, .info-box.navy li { color: rgba(255,255,255,0.82); font-size: 0.875rem; }
-  .info-box.blue p, .info-box.blue li { color: var(--gray-dark); font-size: 0.875rem; }
-  .info-box.gold p, .info-box.gold li { color: var(--gray-dark); font-size: 0.875rem; }
-  .info-box ul { padding-left: 18px; }
-  .info-box li { margin-bottom: 5px; line-height: 1.5; }
+/* RESULT + PRO TIP + SCRIPTURE */
+.result-card{margin-top:20px;border-radius:var(--radius);padding:22px 24px;display:none;}
+.result-card.show{display:block;animation:fadeUp .3s ease;}
+.result-card.great{background:var(--green-light);border:2px solid var(--green);}
+.result-card.good{background:var(--blue-light);border:2px solid var(--blue-mid);}
+.result-card.keep-going{background:var(--gold-pale);border:2px solid var(--gold);}
+.result-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;margin-bottom:8px;}
+.result-card.great .result-title{color:var(--green);}
+.result-card.good .result-title{color:var(--blue-mid);}
+.result-card.keep-going .result-title{color:#7A5C00;}
+.result-sub{font-size:.92rem;margin-bottom:16px;}
 
-  /* ── BULLETS ── */
-  .bullet-list { list-style: none; padding: 0; margin: 10px 0; }
-  .bullet-list li {
-    padding: 5px 0 5px 22px; position: relative;
-    font-size: 0.9rem; color: var(--gray-dark); line-height: 1.55;
-    border-bottom: 1px solid rgba(0,0,0,0.04);
-  }
-  .bullet-list li:last-child { border-bottom: none; }
-  .bullet-list li::before {
-    content: '•'; position: absolute; left: 6px;
-    color: var(--gold); font-size: 1.1rem; line-height: 1.45;
-  }
-  .bullet-list li strong { color: var(--navy); }
+.pt-box{background:var(--navy);border-radius:var(--radius);padding:20px 22px;margin-bottom:14px;}
+.pt-lbl{font-size:.65rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.pt-lbl::before{content:'💡 ';font-size:.9rem;}
+.pt-txt{font-size:.95rem;color:rgba(255,255,255,.88);line-height:1.7;}
+.sc-box{background:var(--gold-pale);border-left:4px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:18px 20px;}
+.sc-lbl{font-size:.65rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.sc-lbl::before{content:'📖 ';font-size:.9rem;}
+.sc-txt{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--navy);line-height:1.6;}
 
-  /* ── OVERVIEW PANEL SPECIALS ── */
-  .outcomes-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 12px; margin-top: 16px;
-  }
-  .outcome-item {
-    display: flex; gap: 12px; align-items: flex-start;
-    background: var(--white); border: 1px solid #e8e8e4;
-    border-radius: var(--radius); padding: 14px 16px; font-size: 0.875rem;
-    box-shadow: 0 1px 6px rgba(26,58,92,0.06);
-  }
-  .outcome-num {
-    background: var(--navy); color: var(--gold);
-    font-size: 0.75rem; font-weight: 700; min-width: 26px; height: 26px;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
+/* REFLECTION */
+.ref-lbl{font-size:.65rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:8px;}
+.ref-lbl::before{content:'✍️ ';font-size:.9rem;}
+.ref-prompt{background:var(--blue-light);border-radius:var(--radius);padding:16px 18px;margin-bottom:16px;font-size:.93rem;color:var(--gray-dark);line-height:1.7;}
+.ref-area{width:100%;min-height:180px;font-family:'Nunito',sans-serif;font-size:.93rem;padding:14px 16px;border:2px solid #D0D8E0;border-radius:var(--radius);resize:vertical;line-height:1.7;color:var(--gray-dark);background:var(--white);transition:border-color .2s;}
+.ref-area:focus{outline:none;border-color:var(--navy);}
+.cc{font-size:.75rem;color:var(--gray);margin-top:5px;text-align:right;}
+.save-wrap{display:flex;align-items:center;gap:12px;margin-top:12px;}
+.saved-ok{font-size:.8rem;color:var(--green);font-weight:700;display:none;}
+.saved-ok.show{display:block;}
 
-  /* ── PRINCIPLES TABLE ── */
-  .principles-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 10px; margin-top: 16px;
-  }
-  .principle-item {
-    background: var(--white); border: 1px solid #e8e8e4;
-    border-top: 3px solid var(--gold); border-radius: var(--radius);
-    padding: 14px 14px; box-shadow: 0 1px 6px rgba(26,58,92,0.06);
-  }
-  .principle-code {
-    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
-    color: var(--gold); margin-bottom: 4px;
-  }
-  .principle-name {
-    font-family: 'Cormorant Garamond', serif; font-size: 1rem;
-    font-weight: 700; color: var(--navy); margin-bottom: 4px;
-  }
-  .principle-desc { font-size: 0.8rem; color: var(--gray-mid); line-height: 1.45; }
+/* OVERVIEW */
+.ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:20px;}
+.ov-card{background:var(--white);border:1px solid #E2E2DC;border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.ov-card:hover{border-color:var(--gold);box-shadow:var(--shadow-lg);}
+.ov-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gray-light);}
+.ov-card.started::before{background:var(--gold);}
+.ov-card.completed::before{background:var(--green);}
+.ov-code{font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--gold);margin-bottom:4px;}
+.ov-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3;}
+.ov-meta{display:flex;gap:10px;font-size:.75rem;color:var(--gray);}
+.ov-chk{color:var(--green);font-weight:800;}
 
-  /* ── CERT SECTION ── */
-  .cert-box {
-    background: var(--gold-pale); border: 2px solid var(--gold);
-    border-radius: var(--radius); padding: 36px 32px; text-align: center;
-    margin: 24px 0; box-shadow: var(--shadow);
-  }
-  .cert-box h2 {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
-    font-weight: 700; color: var(--navy); margin-bottom: 6px;
-  }
-  .cert-box .cert-sub { color: var(--gold); font-weight: 600; margin-bottom: 16px; font-size: 0.95rem; }
-  .cert-line {
-    border-bottom: 1px solid var(--navy); width: 300px;
-    margin: 20px auto 6px; height: 1px;
-  }
-  .cert-label { font-size: 0.75rem; color: var(--gray-mid); letter-spacing: 0.06em; }
-  .cert-quote {
-    font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: 1.05rem; color: var(--navy); margin-top: 20px;
-  }
+/* FOOTER */
+.site-footer{background:var(--navy-deep);border-top:2px solid var(--gold);padding:26px 1.5rem;text-align:center;margin-top:60px;}
+.site-footer p{color:rgba(255,255,255,.45);font-size:.78rem;line-height:1.7;}
+.site-footer a{color:var(--gold);text-decoration:none;}
 
-  /* ── FOOTER ── */
-  .site-footer {
-    background: var(--navy-deep);
-    border-top: 2px solid var(--gold);
-    padding: 28px 2rem; text-align: center;
-    margin-top: 60px;
-  }
-  .site-footer p { color: rgba(255,255,255,0.5); font-size: 0.8rem; line-height: 1.7; }
-  .site-footer a { color: var(--gold); text-decoration: none; }
-  .site-footer strong { color: rgba(255,255,255,0.8); }
-
-  /* ── MISC ── */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
-  .tip-box {
-    background: var(--blue-light); border-left: 4px solid var(--blue-mid);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 14px 18px; margin: 14px 0; font-size: 0.875rem;
-  }
-  .tip-box strong { color: var(--navy); }
-  .gap-16 { margin-top: 16px; }
-  .gap-24 { margin-top: 24px; }
-  .text-navy { color: var(--navy); }
-  .text-gold { color: var(--gold); }
-  .text-muted { color: var(--gray-mid); font-size: 0.875rem; }
-  .fw-bold { font-weight: 700; }
-  .font-serif { font-family: 'Cormorant Garamond', serif; }
-  .mission-quote {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
-    font-style: italic; color: var(--navy); border-left: 4px solid var(--gold);
-    padding: 14px 20px; background: var(--gold-pale); border-radius: 0 4px 4px 0;
-    margin: 20px 0; line-height: 1.6;
-  }
+@media(max-width:640px){
+  .hero-stats{gap:18px;}
+  .mc-title{font-size:1rem;}
+  .day-tab{padding:10px 14px;font-size:.75rem;}
+}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <div class="header-logo">RESTORE <span>Them Project</span></div>
-    <nav class="header-nav">
-      <button class="nav-btn active" onclick="activateTab('overview',this)">Overview</button>
-      <button class="nav-btn" onclick="activateTab('day1',this)">Day 1</button>
-      <button class="nav-btn" onclick="activateTab('day2',this)">Day 2</button>
-      <button class="nav-btn" onclick="activateTab('day3',this)">Day 3</button>
-      <button class="nav-btn" onclick="activateTab('appendix',this)">Appendices</button>
-    </nav>
+    <div class="header-badge">Student Workbook</div>
+    <div class="prog-wrap">
+      <div class="prog-bg"><div class="prog-fill" id="gfill" style="width:0%"></div></div>
+      <div class="prog-txt" id="gtxt">0 / 17</div>
+    </div>
   </div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-tag">Peer Workforce Development Program</div>
-  <h1>3-Day Training Guide<br>& <em>Facilitator Manual</em></h1>
-  <p class="hero-sub">Equipping individuals with lived experience to become certified peer support professionals across Texas behavioral health systems.</p>
-  <div class="hero-meta">
-    <span>⏱ <strong>24 Hours</strong> of Training</span>
-    <span>📍 <strong>Nolanville, TX</strong></span>
-    <span>🏛 <strong>CRPS/PRS</strong> Aligned</span>
-    <span>🤝 <strong>Mixed Audience</strong></span>
-    <span>📞 <strong>512-931-4126</strong></span>
+  <div class="hero-tag">3-Day Peer Workforce Development Program</div>
+  <h1>Student Study Guide<br>&amp; <em>Workbook</em></h1>
+  <p class="hero-sub">17 modules. 255 quiz questions. Lessons, reflections, Pro Tips &amp; scripture — for every step of your peer support journey.</p>
+  <div class="hero-stats">
+    <div class="h-stat"><div class="h-stat-n">3</div><div class="h-stat-l">Training Days</div></div>
+    <div class="h-stat"><div class="h-stat-n">17</div><div class="h-stat-l">Modules</div></div>
+    <div class="h-stat"><div class="h-stat-n">255</div><div class="h-stat-l">Quiz Questions</div></div>
+    <div class="h-stat"><div class="h-stat-n">17</div><div class="h-stat-l">Reflections</div></div>
   </div>
-  <div class="quote-bar">"Nothing About Us Without Us. We can and do recover."</div>
+  <div class="hero-quote">"Nothing About Us Without Us. We can and do recover." — RESTORE Them Project</div>
 </div>
 
-<!-- TABS -->
-<div class="tabs-wrapper">
-  <div class="tabs-row">
-    <button class="tab active" onclick="activateTab('overview',this)" id="tab-overview">
-      <span class="tab-num">✦</span> Program Overview
-    </button>
-    <button class="tab" onclick="activateTab('day1',this)" id="tab-day1">
-      <span class="tab-num">1</span> Day 1 — Foundation
-    </button>
-    <button class="tab" onclick="activateTab('day2',this)" id="tab-day2">
-      <span class="tab-num">2</span> Day 2 — Core Recovery
-    </button>
-    <button class="tab" onclick="activateTab('day3',this)" id="tab-day3">
-      <span class="tab-num">3</span> Day 3 — Launch
-    </button>
-    <button class="tab" onclick="activateTab('appendix',this)" id="tab-appendix">
-      <span class="tab-num">+</span> Appendices
-    </button>
+<div class="app-wrap">
+  <div class="day-tabs">
+    <button class="day-tab active" onclick="showDay('ov',this)"><span class="dtn">✦</span> Overview</button>
+    <button class="day-tab" onclick="showDay('d1',this)"><span class="dtn">1</span> Day 1 — Foundation</button>
+    <button class="day-tab" onclick="showDay('d2',this)"><span class="dtn">2</span> Day 2 — Core Recovery</button>
+    <button class="day-tab" onclick="showDay('d3',this)"><span class="dtn">3</span> Day 3 — Launch</button>
   </div>
 
-  <!-- ══ OVERVIEW PANEL ══ -->
-  <div class="panel active" id="panel-overview">
-
-    <h2 class="section-title">Program Overview</h2>
-    <div class="section-rule"></div>
-    <p class="section-sub">The RESTORE Them Project 3-Day Peer Workforce Development Program prepares individuals with lived experience in mental health or substance use recovery to become certified peer support professionals — grounded in RESTORE's mission of restoring dignity through lived experience, faith, and transformative relationship.</p>
-
-    <div class="info-box navy gap-24">
-      <h4>Why Peer Workforce Development?</h4>
-      <p>Peer workforce development programs train individuals with lived experience to become certified professionals who support others navigating recovery. Research consistently shows that peer support specialists reduce hospital admissions, lower emergency department visits, and build trust in communities clinical staff often cannot reach.</p>
-      <br>
-      <p>In Texas, certifications like the <strong style="color:var(--gold-light)">Certified Recovery Peer Specialist (CRPS)</strong> and <strong style="color:var(--gold-light)">Peer Recovery Supporter (PRS)</strong> create formal career pathways — from community outreach and criminal justice settings to hospitals and peer-run organizations. This program contributes toward those certification hours.</p>
-    </div>
-
-    <div class="two-col gap-24">
-      <div>
-        <h3 class="section-title" style="font-size:1.3rem">4 Program Phases</h3>
-        <div class="section-rule"></div>
-        <ul class="bullet-list">
-          <li><strong>Foundation</strong> — Assessment, orientation &amp; spiritual grounding</li>
-          <li><strong>Core Recovery</strong> — Counseling, support groups &amp; life skills</li>
-          <li><strong>Transition &amp; Integration</strong> — Community re-entry &amp; job readiness</li>
-          <li><strong>Aftercare &amp; Ongoing Support</strong> — Mentorship &amp; relapse prevention</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="section-title" style="font-size:1.3rem">Key Training Components</h3>
-        <div class="section-rule"></div>
-        <ul class="bullet-list">
-          <li><strong>Certification Training</strong> — Aligned with Texas CRPS &amp; PRS requirements</li>
-          <li><strong>Skill Development</strong> — Active listening, crisis response, ethical decision-making</li>
-          <li><strong>Professionalization</strong> — Resume writing, interview prep, workplace documentation</li>
-          <li><strong>Career Paths</strong> — Mentorship, supervision, and career ladder orientation</li>
-          <li><strong>Faith Integration</strong> — Christ-centered, Bible-based 12-step principles</li>
-          <li><strong>Holistic Planning</strong> — Physical, emotional, mental, and spiritual health</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2 class="section-title gap-24" style="font-size:1.5rem">10 Guiding Principles (SAMHSA ROSC)</h2>
-    <div class="section-rule"></div>
-    <div class="principles-grid">
-      <div class="principle-item"><div class="principle-code">P1</div><div class="principle-name">Faith-Based</div><div class="principle-desc">Hope through spiritual belief in Jesus Christ unto God our Father</div></div>
-      <div class="principle-item"><div class="principle-code">P2</div><div class="principle-name">Person-Driven</div><div class="principle-desc">Empowering individuals to take charge of their own recovery</div></div>
-      <div class="principle-item"><div class="principle-code">P3</div><div class="principle-name">Holistic</div><div class="principle-desc">Physical, emotional, mental, and spiritual health addressed together</div></div>
-      <div class="principle-item"><div class="principle-code">P4</div><div class="principle-name">Trauma-Informed</div><div class="principle-desc">Understanding and healing from past trauma with compassion</div></div>
-      <div class="principle-item"><div class="principle-code">P5</div><div class="principle-name">Many Pathways</div><div class="principle-desc">Embracing diverse recovery methods, timelines, and approaches</div></div>
-      <div class="principle-item"><div class="principle-code">P6</div><div class="principle-name">Peer Support</div><div class="principle-desc">Strength through shared experiences, mutual aid, and fellowship</div></div>
-      <div class="principle-item"><div class="principle-code">P7</div><div class="principle-name">Relational</div><div class="principle-desc">Building supportive, loving relationships as the medium of healing</div></div>
-      <div class="principle-item"><div class="principle-code">P8</div><div class="principle-name">Strengths/Responsibility</div><div class="principle-desc">Focusing on strengths and holding individuals capable &amp; accountable</div></div>
-      <div class="principle-item"><div class="principle-code">P9</div><div class="principle-name">Respect</div><div class="principle-desc">Treating everyone with dignity and honor at every stage</div></div>
-      <div class="principle-item"><div class="principle-code">P10</div><div class="principle-name">Culture</div><div class="principle-desc">Respecting and integrating cultural backgrounds and identities</div></div>
-    </div>
-
-    <h2 class="section-title gap-24" style="font-size:1.5rem">Core Values</h2>
-    <div class="section-rule"></div>
-    <div class="card-grid">
-      <div class="card navy-card"><div class="card-icon">🕊</div><h3>Dignity — The Heart</h3><p>"We see you. You are valuable right now."</p></div>
-      <div class="card navy-card"><div class="card-icon">✨</div><h3>Hope — The Mind</h3><p>"Your past is not your future."</p></div>
-      <div class="card navy-card"><div class="card-icon">🤝</div><h3>Community — The Belonging</h3><p>"You do not have to do this alone."</p></div>
-      <div class="card navy-card"><div class="card-icon">🧭</div><h3>Mentorship — The Hands</h3><p>"Let us show you how to walk this out."</p></div>
-      <div class="card navy-card"><div class="card-icon">🌱</div><h3>Transformation — The Spirit</h3><p>"Go and restore others."</p></div>
-    </div>
-
-    <h2 class="section-title gap-24" style="font-size:1.5rem">Learning Outcomes</h2>
-    <div class="section-rule"></div>
-    <p class="text-muted">By the end of this 3-day program, participants will be able to:</p>
-    <div class="outcomes-grid gap-16">
-      <div class="outcome-item"><div class="outcome-num">1</div><span>Articulate their personal recovery story in a structured, hope-centered format</span></div>
-      <div class="outcome-item"><div class="outcome-num">2</div><span>Apply RESTORE's 10 Guiding Principles across diverse peer support settings</span></div>
-      <div class="outcome-item"><div class="outcome-num">3</div><span>Demonstrate core peer support skills: active listening, ethical limits, trauma-informed communication</span></div>
-      <div class="outcome-item"><div class="outcome-num">4</div><span>Navigate the Texas CRPS/PRS certification pathway with a concrete action plan</span></div>
-      <div class="outcome-item"><div class="outcome-num">5</div><span>Develop a personal holistic recovery plan using RESTORE's four-domain framework</span></div>
-      <div class="outcome-item"><div class="outcome-num">6</div><span>Build a professional portfolio: resume, personal statement, and reference list</span></div>
-      <div class="outcome-item"><div class="outcome-num">7</div><span>Identify relapse prevention strategies and ongoing support structures</span></div>
-      <div class="outcome-item"><div class="outcome-num">8</div><span>Articulate the career ladder from peer advocate to peer supervisor</span></div>
-    </div>
+  <!-- OVERVIEW -->
+  <div class="day-panel active" id="panel-ov">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:6px">Your Learning Journey</h2>
+    <div style="width:48px;height:3px;background:var(--gold);margin-bottom:16px"></div>
+    <p style="color:var(--gray);max-width:680px;margin-bottom:6px">Click any module to begin. Your quiz scores and reflections are saved automatically in your browser.</p>
+    <p style="font-size:.82rem;color:var(--gray);font-style:italic;margin-bottom:4px">🟡 Gold border = started &nbsp;|&nbsp; 🟢 Green border = quiz completed &nbsp;|&nbsp; Each module has 4 tabs: Story · Lesson · Quiz · Reflection</p>
+    <div class="ov-grid" id="ov-grid"></div>
   </div>
 
-  <!-- ══ DAY 1 PANEL ══ -->
-  <div class="panel" id="panel-day1">
-    <div class="day-header" data-day="01">
-      <div class="day-label">Day 1 of 3</div>
-      <div class="day-title">Foundation: Identity, Story &amp; the Call to Serve</div>
-      <div class="day-phases">
-        <span class="phase-tag">Phase: Foundation</span>
-        <span class="phase-tag">P1 — Faith-Based</span>
-        <span class="phase-tag">P2 — Person-Driven</span>
-        <span class="phase-tag">P6 — Peer Support</span>
-        <span class="phase-tag">P9 — Respect</span>
-      </div>
+  <!-- DAY 1 -->
+  <div class="day-panel" id="panel-d1">
+    <div class="day-hdr" data-day="01">
+      <div class="day-lbl">Day 1 of 3</div>
+      <div class="day-ttl">Foundation: Identity, Story &amp; the Call to Serve</div>
+      <div class="day-dsc">Modules 1A–1E establish the spiritual, personal, and professional foundation for peer support work.</div>
     </div>
-    <p class="section-sub">Day 1 establishes the spiritual, personal, and professional foundation for the peer support role. Participants explore RESTORE's origin story, anchor their recovery journey in a structured narrative framework, and are introduced to the ethics, scope, and guiding principles that define peer work. The day closes with spiritual grounding and peer covenant formation.</p>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">Day 1 Schedule</h3>
-    <div class="section-rule"></div>
-    <div class="schedule-wrap">
-      <table>
-        <thead><tr><th>Time</th><th>Session / Activity</th><th>Format</th><th class="note-cell">Facilitator Note</th></tr></thead>
-        <tbody>
-          <tr><td>8:00–8:30</td><td>Welcome, Registration &amp; Morning Devotion</td><td class="format-cell">Opening Ceremony</td><td class="note-cell">Founder opens in prayer</td></tr>
-          <tr><td>8:30–9:30</td><td>Who Is RESTORE? Mission, Vision, History &amp; Core Values</td><td class="format-cell">Presentation + Q&amp;A</td><td class="note-cell">Highlight 5 core values</td></tr>
-          <tr><td>9:30–10:30</td><td>Module 1A: What Is Peer Support? Roles, Scope &amp; Ethics</td><td class="format-cell">Didactic + Discussion</td><td class="note-cell">CRPS/PRS roles; TX HHSC scope</td></tr>
-          <tr class="break-row"><td>10:30–10:45</td><td>Break</td><td>—</td><td>—</td></tr>
-          <tr><td>10:45–12:00</td><td>Module 1B: My Story Is My Credential — Recovery Narrative Workshop</td><td class="format-cell">Workshop</td><td class="note-cell">RESTORE Story Framework</td></tr>
-          <tr><td>12:00–1:00</td><td>Lunch + Informal Mentorship Introductions</td><td class="format-cell">Networking</td><td class="note-cell">Pair with RESTORE mentors</td></tr>
-          <tr><td>1:00–2:15</td><td>Module 1C: 10 Guiding Principles Deep Dive (1–5)</td><td class="format-cell">Small Groups</td><td class="note-cell">P1–P5 scenarios</td></tr>
-          <tr><td>2:15–3:15</td><td>Module 1D: Trauma-Informed Care &amp; Boundaries</td><td class="format-cell">Case Studies</td><td class="note-cell">Role-play + debrief</td></tr>
-          <tr class="break-row"><td>3:15–3:30</td><td>Break</td><td>—</td><td>—</td></tr>
-          <tr><td>3:30–4:30</td><td>Module 1E: Bible 12-Step Integration &amp; Spiritual Grounding</td><td class="format-cell">Group Study</td><td class="note-cell">Spiritual elements voluntary</td></tr>
-          <tr><td>4:30–5:00</td><td>Day 1 Reflection, Peer Covenant &amp; Closing Prayer</td><td class="format-cell">Circle Share</td><td class="note-cell">Affirm 'Nothing About Us'</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">Module Details</h3>
-    <div class="section-rule"></div>
-    <div class="module-list">
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">1A</span>
-          <span class="module-title">What Is Peer Support? Roles, Scope &amp; Ethics</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags">
-            <span class="ptag">P2</span><span class="ptag-label">Person-Driven</span>
-            <span class="ptag">P6</span><span class="ptag-label">Peer Support</span>
-            <span class="ptag">P9</span><span class="ptag-label">Respect</span>
-          </div>
-          <p class="text-muted" style="margin-bottom:12px">Participants explore the formal definition of peer support, the difference between peer specialists and clinical providers, and the ethical framework governing peer work in Texas.</p>
-          <ul class="bullet-list">
-            <li>Define <strong>Certified Recovery Peer Specialist (CRPS)</strong> and <strong>Peer Recovery Supporter (PRS)</strong></li>
-            <li>Review Texas HHSC peer support service definitions and settings: hospitals, community outreach, criminal justice, peer-run organizations</li>
-            <li>RESTORE's Person-Driven principle — empowering individuals to take charge of their own recovery</li>
-            <li>Scope of practice: what peers do and do not do — maintaining safe, ethical role clarity</li>
-            <li>Ethics case study: confidentiality, dual relationships, and professional limits</li>
-          </ul>
-          <div class="tip-box gap-16"><strong>Facilitator Note:</strong> Normalize the mix of lived experience and professional skill — both are equally required. Reference Texas HHS resources and PeerHubTX (centralizedtraining.com/peerhubtx) for certification details.</div>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">1B</span>
-          <span class="module-title">My Story Is My Credential: Recovery Narrative Workshop</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags">
-            <span class="ptag">P1</span><span class="ptag-label">Faith-Based</span>
-            <span class="ptag">P6</span><span class="ptag-label">Peer Support</span>
-            <span class="ptag">P7</span><span class="ptag-label">Relational</span>
-          </div>
-          <p class="text-muted" style="margin-bottom:12px">Personal narrative is the defining professional tool of peer support. This workshop guides participants through the RESTORE Story Framework.</p>
-          <div class="info-box gold">
-            <h4>The RESTORE Story Framework</h4>
-            <ul>
-              <li><strong>BEFORE</strong> — Who were you before your turning point? Humanize, do not dramatize.</li>
-              <li><strong>DURING</strong> — What was recovery like? What helped? What hurt?</li>
-              <li><strong>AFTER</strong> — Where are you now? What has changed?</li>
-              <li><strong>HOPE</strong> — What do you want others to know is possible?</li>
-            </ul>
-            <p style="margin-top:10px;font-style:italic;font-size:0.85rem">Format: 3–5 minutes per person. Partners practice active listening. Debrief as full group.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">1C</span>
-          <span class="module-title">10 Guiding Principles Deep Dive (Principles 1–5)</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags">
-            <span class="ptag">P1–P5</span><span class="ptag-label">Faith-Based / Person-Driven / Holistic / Trauma-Informed / Many Pathways</span>
-          </div>
-          <p class="text-muted" style="margin-bottom:12px">Small groups of 4–5 are each assigned one principle. Groups read the definition, work through an application scenario, and report back to the full cohort.</p>
-          <ul class="bullet-list">
-            <li><strong>Faith-Based:</strong> Hope through spiritual belief; voluntary, non-coercive, respecting individual faith journeys</li>
-            <li><strong>Person-Driven:</strong> The person in recovery sets goals; the peer supports the path they choose</li>
-            <li><strong>Holistic:</strong> Physical, emotional, mental, and spiritual health addressed together</li>
-            <li><strong>Trauma-Informed:</strong> Past trauma shapes present behavior; the four R's: Realize, Recognize, Respond, Resist Re-traumatization</li>
-            <li><strong>Many Pathways:</strong> No single road to recovery; peer specialists honor diverse approaches and timelines</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">1D</span>
-          <span class="module-title">Trauma-Informed Care &amp; Boundaries</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags">
-            <span class="ptag">P4</span><span class="ptag-label">Trauma-Informed</span>
-            <span class="ptag">P8</span><span class="ptag-label">Strengths/Responsibility</span>
-          </div>
-          <ul class="bullet-list">
-            <li>ACEs (Adverse Childhood Experiences) overview and relevance to recovery</li>
-            <li>The four R's: Realize, Recognize, Respond, Resist Re-traumatization</li>
-            <li>Peer boundary scenarios — role-play and debrief</li>
-            <li>Self-disclosure: when and how much to share your story professionally</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">1E</span>
-          <span class="module-title">Bible 12-Step Integration &amp; Spiritual Grounding</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags">
-            <span class="ptag">P1</span><span class="ptag-label">Faith-Based</span>
-            <span class="ptag">P3</span><span class="ptag-label">Holistic</span>
-          </div>
-          <p class="text-muted" style="margin-bottom:12px">RESTORE integrates Christ-centered recovery principles with the 12-step framework. Participation in spiritual elements reflects individual choice and is never required for program completion.</p>
-          <ul class="bullet-list">
-            <li>Introduction to RESTORE's Bible-based 12-step approach</li>
-            <li>How spiritual anchors support long-term recovery</li>
-            <li>Scripture reflection (voluntary sharing)</li>
-            <li>Group prayer and reading of the Peer Covenant</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
+    <div class="module-grid" id="grid-d1"></div>
   </div>
 
-  <!-- ══ DAY 2 PANEL ══ -->
-  <div class="panel" id="panel-day2">
-    <div class="day-header" data-day="02">
-      <div class="day-label">Day 2 of 3</div>
-      <div class="day-title">Core Recovery: Skills, Tools &amp; Professional Practice</div>
-      <div class="day-phases">
-        <span class="phase-tag">Phase: Core Recovery</span>
-        <span class="phase-tag">P3 — Holistic</span>
-        <span class="phase-tag">P7 — Relational</span>
-        <span class="phase-tag">P8 — Strengths</span>
-        <span class="phase-tag">P10 — Culture</span>
-      </div>
+  <!-- DAY 2 -->
+  <div class="day-panel" id="panel-d2">
+    <div class="day-hdr" data-day="02">
+      <div class="day-lbl">Day 2 of 3</div>
+      <div class="day-ttl">Core Recovery: Skills, Tools &amp; Professional Practice</div>
+      <div class="day-dsc">Modules 2A–2F build the practical skills that make peer specialists effective.</div>
     </div>
-    <p class="section-sub">Day 2 builds practical skills that make peer specialists effective. Participants engage in active listening labs, crisis response protocols, motivational interviewing basics, holistic recovery planning, and life skills training — anchored in RESTORE's holistic, person-centered framework.</p>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">Day 2 Schedule</h3>
-    <div class="section-rule"></div>
-    <div class="schedule-wrap">
-      <table>
-        <thead><tr><th>Time</th><th>Session / Activity</th><th>Format</th><th class="note-cell">Facilitator Note</th></tr></thead>
-        <tbody>
-          <tr><td>8:00–8:30</td><td>Morning Check-In, Devotion &amp; Day 2 Intentions</td><td class="format-cell">Circle Opening</td><td class="note-cell">Review Day 1 reflections</td></tr>
-          <tr><td>8:30–9:45</td><td>Module 2A: Active Listening, Motivational Interviewing &amp; Empathy Skills</td><td class="format-cell">Skills Lab</td><td class="note-cell">OARS technique; practice in triads</td></tr>
-          <tr><td>9:45–10:45</td><td>Module 2B: Crisis Response for Peer Specialists</td><td class="format-cell">Didactic + Role-Play</td><td class="note-cell">QPR basics; safety planning</td></tr>
-          <tr class="break-row"><td>10:45–11:00</td><td>Break</td><td>—</td><td>—</td></tr>
-          <tr><td>11:00–12:00</td><td>Module 2C: 10 Guiding Principles Deep Dive (6–10)</td><td class="format-cell">Small Groups</td><td class="note-cell">P6–P10 scenarios</td></tr>
-          <tr><td>12:00–1:00</td><td>Lunch + Holistic Wellness Break</td><td class="format-cell">Break</td><td class="note-cell">Optional guided movement/prayer</td></tr>
-          <tr><td>1:00–2:15</td><td>Module 2D: Holistic Recovery Planning — Building the Plan</td><td class="format-cell">Workshop</td><td class="note-cell">Draft own 4-domain recovery plan</td></tr>
-          <tr><td>2:15–3:15</td><td>Module 2E: Life Skills Development &amp; Person-Centered Support</td><td class="format-cell">Breakout Groups</td><td class="note-cell">Budgeting, communication, goals</td></tr>
-          <tr class="break-row"><td>3:15–3:30</td><td>Break</td><td>—</td><td>—</td></tr>
-          <tr><td>3:30–4:30</td><td>Module 2F: Cultural Humility &amp; Community in Recovery</td><td class="format-cell">Panel + Discussion</td><td class="note-cell">1–2 community voices invited</td></tr>
-          <tr><td>4:30–5:00</td><td>Day 2 Reflection, Peer Debrief &amp; Closing Affirmation</td><td class="format-cell">Circle Share</td><td class="note-cell">Name one skill to practice</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">Module Details</h3>
-    <div class="section-rule"></div>
-    <div class="module-list">
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">2A</span>
-          <span class="module-title">Active Listening, Motivational Interviewing &amp; Empathy Skills</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P6</span><span class="ptag-label">Peer Support</span><span class="ptag">P7</span><span class="ptag-label">Relational</span><span class="ptag">P2</span><span class="ptag-label">Person-Driven</span></div>
-          <p class="text-muted" style="margin-bottom:12px">The OARS framework from Motivational Interviewing helps participants engage others without judgment, advice-giving, or clinical language.</p>
-          <div class="info-box blue">
-            <h4>The OARS Framework</h4>
-            <ul>
-              <li><strong>O — Open-Ended Questions:</strong> Invite the person to tell their story in their own words</li>
-              <li><strong>A — Affirmations:</strong> Recognize strengths, not just struggles</li>
-              <li><strong>R — Reflective Listening:</strong> Mirror back what you hear without interpreting or advising</li>
-              <li><strong>S — Summarizing:</strong> Bring the conversation together and invite correction</li>
-            </ul>
-            <p style="margin-top:10px;font-style:italic;font-size:0.85rem">Format: Triads — Speaker / Listener / Observer. Rotate roles. Observer uses OARS checklist. Debrief after each round.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">2B</span>
-          <span class="module-title">Crisis Response for Peer Specialists</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P4</span><span class="ptag-label">Trauma-Informed</span><span class="ptag">P8</span><span class="ptag-label">Strengths/Responsibility</span></div>
-          <p class="text-muted" style="margin-bottom:12px">Peers are often the first point of contact for someone in crisis. This module trains compassionate response without overstepping into clinical roles.</p>
-          <ul class="bullet-list">
-            <li>Recognizing warning signs of mental health crisis and relapse</li>
-            <li><strong>QPR: Question, Persuade, Refer</strong> — the peer's crisis response toolkit</li>
-            <li>Safety planning support: what a peer can and cannot do</li>
-            <li>Warm handoff protocols — connecting to clinical and community resources</li>
-            <li>Self-care after a crisis interaction — protecting peer wellness</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">2C</span>
-          <span class="module-title">10 Guiding Principles Deep Dive (Principles 6–10)</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P6–P10</span><span class="ptag-label">Peer Support / Relational / Strengths / Respect / Culture</span></div>
-          <ul class="bullet-list">
-            <li><strong>Peer Support:</strong> The power of 'me too' — shared experience as the medium of connection</li>
-            <li><strong>Relational:</strong> Building supportive, loving relationships as the foundation of healing</li>
-            <li><strong>Strengths/Responsibility:</strong> Focusing on what the person can do and holding them capable</li>
-            <li><strong>Respect:</strong> Treating everyone with dignity regardless of stage of recovery or background</li>
-            <li><strong>Culture:</strong> Integrating cultural backgrounds, traditions, and identities into personalized planning</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">2D</span>
-          <span class="module-title">Holistic Recovery Planning — Building the Plan</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P3</span><span class="ptag-label">Holistic</span><span class="ptag">P2</span><span class="ptag-label">Person-Driven</span></div>
-          <p class="text-muted" style="margin-bottom:12px">Participants draft their own recovery plan using the four-domain model — gaining both a personal tool and a template they can use with those they serve.</p>
-          <div class="info-box gold">
-            <h4>RESTORE's Four Recovery Domains</h4>
-            <ul>
-              <li><strong>Physical Health</strong> — Sleep, nutrition, movement, medical care, medication management</li>
-              <li><strong>Emotional &amp; Mental Health</strong> — Coping skills, triggers, counseling, support groups, journaling</li>
-              <li><strong>Spiritual Health</strong> — Faith practice, prayer, scripture study, pastoral counseling</li>
-              <li><strong>Social &amp; Vocational Health</strong> — Relationships, employment, housing stability, community integration</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">2E</span>
-          <span class="module-title">Life Skills Development &amp; Person-Centered Support</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P2</span><span class="ptag-label">Person-Driven</span><span class="ptag">P8</span><span class="ptag-label">Strengths/Responsibility</span></div>
-          <ul class="bullet-list">
-            <li>Financial basics: budgeting, banking access, managing recovery-related benefits</li>
-            <li>Communication skills: advocacy, self-expression, and navigating conflict productively</li>
-            <li>Daily structure and routine: building a recovery-supportive environment</li>
-            <li>Goal-setting using SMART goals within a recovery context</li>
-            <li>Referral mapping: connecting individuals to community resources effectively</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">2F</span>
-          <span class="module-title">Cultural Humility &amp; Community in Recovery</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P10</span><span class="ptag-label">Culture</span><span class="ptag">P7</span><span class="ptag-label">Relational</span></div>
-          <ul class="bullet-list">
-            <li>Cultural humility vs. cultural competence — an ongoing posture, not a destination</li>
-            <li>How race, ethnicity, faith tradition, and family structure shape recovery</li>
-            <li>Panel discussion with community voices (facilitate with care and consent)</li>
-            <li>RESTORE's position: "We do not judge or condemn. Belief and faith are personal choices."</li>
-            <li>Strategies for building inclusive, culturally responsive peer support relationships</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
+    <div class="module-grid" id="grid-d2"></div>
   </div>
 
-  <!-- ══ DAY 3 PANEL ══ -->
-  <div class="panel" id="panel-day3">
-    <div class="day-header" data-day="03">
-      <div class="day-label">Day 3 of 3</div>
-      <div class="day-title">Transition &amp; Launch: Professionalism, Career &amp; Sending Out</div>
-      <div class="day-phases">
-        <span class="phase-tag">Phase: Transition + Aftercare</span>
-        <span class="phase-tag">All 10 Principles Integrated</span>
-      </div>
+  <!-- DAY 3 -->
+  <div class="day-panel" id="panel-d3">
+    <div class="day-hdr" data-day="03">
+      <div class="day-lbl">Day 3 of 3</div>
+      <div class="day-ttl">Transition &amp; Launch: Professionalism, Career &amp; Sending Out</div>
+      <div class="day-dsc">Modules 3A–3F build professional identity and launch participants into the peer support workforce.</div>
     </div>
-    <p class="section-sub">Day 3 shifts toward launch. Participants build their professional identity, develop their career portfolio, and map a concrete pathway toward CRPS/PRS certification. The day addresses relapse prevention, mentorship structures, peer wellness, and closes with a Commissioning Ceremony.</p>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">Day 3 Schedule</h3>
-    <div class="section-rule"></div>
-    <div class="schedule-wrap">
-      <table>
-        <thead><tr><th>Time</th><th>Session / Activity</th><th>Format</th><th class="note-cell">Facilitator Note</th></tr></thead>
-        <tbody>
-          <tr><td>8:00–8:30</td><td>Morning Check-In, Devotion &amp; Program Celebration</td><td class="format-cell">Opening Ceremony</td><td class="note-cell">Acknowledge growth and courage</td></tr>
-          <tr><td>8:30–9:45</td><td>Module 3A: Professionalization — Resume, Interview &amp; Workplace Skills</td><td class="format-cell">Workshop</td><td class="note-cell">Resume; mock interviews; professional email</td></tr>
-          <tr><td>9:45–10:45</td><td>Module 3B: Texas CRPS/PRS Certification Pathway</td><td class="format-cell">Informational Session</td><td class="note-cell">HHSC requirements; exam prep</td></tr>
-          <tr class="break-row"><td>10:45–11:00</td><td>Break</td><td>—</td><td>—</td></tr>
-          <tr><td>11:00–12:00</td><td>Module 3C: Mentorship, Supervision &amp; Career Ladders</td><td class="format-cell">Panel + Q&amp;A</td><td class="note-cell">Introduce mentor pairs; career ladder</td></tr>
-          <tr><td>12:00–1:00</td><td>Lunch + Portfolio Work Time</td><td class="format-cell">Workshop Continuation</td><td class="note-cell">Finalize personal statement</td></tr>
-          <tr><td>1:00–2:00</td><td>Module 3D: Relapse Prevention &amp; Sustained Recovery</td><td class="format-cell">Small Groups</td><td class="note-cell">WRAP elements; accountability plans</td></tr>
-          <tr><td>2:00–3:00</td><td>Module 3E: Peer Work in Diverse Settings</td><td class="format-cell">Case Studies</td><td class="note-cell">Hospital, outreach, criminal justice, peer-run</td></tr>
-          <tr class="break-row"><td>3:00–3:15</td><td>Break</td><td>—</td><td>—</td></tr>
-          <tr><td>3:15–4:15</td><td>Module 3F: Building Resilience — Peer Wellness &amp; Sustainability</td><td class="format-cell">Group Reflection</td><td class="note-cell">Compassion fatigue; self-care systems</td></tr>
-          <tr><td>4:15–5:00</td><td>Commissioning Ceremony, Certificate Presentation &amp; Closing Prayer</td><td class="format-cell">Full Cohort</td><td class="note-cell">Founder delivers charge; certificates</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">Module Details</h3>
-    <div class="section-rule"></div>
-    <div class="module-list">
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">3A</span>
-          <span class="module-title">Professionalization: Resume, Interview &amp; Workplace Skills</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P2</span><span class="ptag-label">Person-Driven</span><span class="ptag">P8</span><span class="ptag-label">Strengths/Responsibility</span></div>
-          <ul class="bullet-list">
-            <li>Resume writing: translating lived experience into professional language</li>
-            <li>Personal statement: articulating your 'why' as a peer specialist</li>
-            <li>Mock interview: practicing responses to common peer support interview questions</li>
-            <li>Workplace documentation basics: progress notes, service logs, and confidentiality</li>
-            <li>Professional communication: email etiquette, limits, and workplace relationships</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">3B</span>
-          <span class="module-title">Texas CRPS/PRS Certification Pathway</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P8</span><span class="ptag-label">Strengths/Responsibility</span><span class="ptag">P2</span><span class="ptag-label">Person-Driven</span></div>
-          <div class="info-box blue">
-            <h4>Texas CRPS Pathway Overview</h4>
-            <ul>
-              <li><strong>Eligibility:</strong> Self-identify as a person in recovery (mental health or substance use)</li>
-              <li><strong>Training Hours:</strong> Complete HHSC-approved training — this program contributes toward required totals</li>
-              <li><strong>Supervised Work:</strong> Documented peer support hours under a qualified supervisor</li>
-              <li><strong>Exam:</strong> Pass the Texas CRPS or PRS certification examination</li>
-              <li><strong>Renewal:</strong> Continuing education and ethics requirements</li>
-            </ul>
-            <p style="margin-top:10px;font-size:0.85rem"><strong>Resources:</strong> Texas HHS (hhs.texas.gov) | PeerHubTX (centralizedtraining.com/peerhubtx) | Thrive Peer Recovery (thrivepeersupport.com)</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">3C</span>
-          <span class="module-title">Mentorship, Supervision &amp; Career Ladders</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P6</span><span class="ptag-label">Peer Support</span><span class="ptag">P7</span><span class="ptag-label">Relational</span></div>
-          <ul class="bullet-list">
-            <li>Introduction to RESTORE mentor pairs — participants formally meet their assigned mentor</li>
-            <li>Supervision expectations: frequency, focus, documentation, and professional growth</li>
-            <li><strong>Career Ladder:</strong> Peer Advocate → Certified Peer Specialist → Lead Peer Specialist → Peer Supervisor</li>
-            <li>Volunteer opportunities at RESTORE as a first professional step</li>
-            <li>Employment settings: hospitals, community outreach, criminal justice, and peer-run organizations</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">3D</span>
-          <span class="module-title">Relapse Prevention &amp; Sustained Recovery</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P3</span><span class="ptag-label">Holistic</span><span class="ptag">P5</span><span class="ptag-label">Many Pathways</span></div>
-          <ul class="bullet-list">
-            <li>Reframing relapse as a process, not an event — reducing shame and increasing agency</li>
-            <li>Early warning signs and personal triggers — individual identification exercise</li>
-            <li><strong>WRAP elements:</strong> Wellness Toolbox, Daily Maintenance Plan, Crisis Plan, Post-Crisis Plan</li>
-            <li>Peer accountability partnerships — structured check-in agreements between cohort members</li>
-            <li>RESTORE's aftercare model: ongoing support groups, mentorship, and community activities</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">3E</span>
-          <span class="module-title">Peer Work in Diverse Settings</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P5</span><span class="ptag-label">Many Pathways</span><span class="ptag">P10</span><span class="ptag-label">Culture</span></div>
-          <div class="info-box gold">
-            <h4>Setting Case Studies</h4>
-            <ul>
-              <li><strong>Hospital / Inpatient:</strong> Warm handoff from clinical team; bridging discharge to community care</li>
-              <li><strong>Community Outreach:</strong> Meeting people where they are; engagement without coercion</li>
-              <li><strong>Criminal Justice:</strong> Navigating reentry; working within justice system structures and limits</li>
-              <li><strong>Peer-Run Organizations:</strong> Self-determination, collective recovery leadership, organizational culture</li>
-            </ul>
-            <p style="margin-top:10px;font-style:italic;font-size:0.85rem">Small groups tackle one scenario each, then present insights to the full cohort.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="module-card" onclick="toggleModule(this)">
-        <div class="module-card-header">
-          <span class="module-num">3F</span>
-          <span class="module-title">Building Resilience: Peer Wellness &amp; Sustainability</span>
-          <span class="module-chevron">▼</span>
-        </div>
-        <div class="module-body">
-          <div class="principle-tags"><span class="ptag">P3</span><span class="ptag-label">Holistic</span><span class="ptag">P8</span><span class="ptag-label">Strengths/Responsibility</span></div>
-          <p class="text-muted" style="margin-bottom:12px">You cannot pour from an empty cup. This session addresses compassion fatigue, vicarious trauma, and sustainable wellness practices — modeling the same holistic care RESTORE uses with those it serves.</p>
-          <ul class="bullet-list">
-            <li>Recognizing compassion fatigue and vicarious trauma in yourself</li>
-            <li>Personal wellness planning: daily practices that replenish mind, body, and spirit</li>
-            <li>RESTORE's ongoing support structures: groups, mentorship, pastoral counseling, and community</li>
-            <li>Professional limits as an act of self-care, not self-abandonment</li>
-            <li>"Your story is not your burden — it is your credential and your gift."</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="info-box navy gap-24">
-      <h4>The Commissioning Ceremony</h4>
-      <p>The program closes with a formal Commissioning Ceremony led by the RESTORE founder. Participants receive their program completion certificate, are formally introduced to their mentor, and are prayed over and sent out as RESTORE Peer Advocates. The ceremony reflects RESTORE's core mission: to RESTORE dignity, empower purpose, and multiply healing.</p>
-      <br>
-      <p style="font-style:italic;color:var(--gold-light)">"We exist to RESTORE the dignity of those in recovery by using our lived experience to guide them into a transformative relationship with Jesus Christ, empowering them to walk in their God-given purpose."</p>
-    </div>
+    <div class="module-grid" id="grid-d3"></div>
   </div>
+</div>
 
-  <!-- ══ APPENDIX PANEL ══ -->
-  <div class="panel" id="panel-appendix">
-    <h2 class="section-title">Appendices</h2>
-    <div class="section-rule"></div>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">A — Facilitator Guidelines</h3>
-    <ul class="bullet-list">
-      <li>Lead from lived experience — your story is your authority in this room</li>
-      <li>Hold "Nothing About Us Without Us" in every design decision and facilitation choice</li>
-      <li>Maintain trauma-informed facilitation: offer movement breaks, honor emotional responses, never force sharing</li>
-      <li>Faith integration is central; individual participation in spiritual elements is always voluntary and honored either way</li>
-      <li>Use inclusive language that honors diverse recovery pathways, cultural backgrounds, and faith traditions</li>
-      <li>Co-facilitate whenever possible — peer and professional together models the relationship</li>
-      <li>Document participant hours carefully to support CRPS/PRS certification applications</li>
-    </ul>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">B — 10 Guiding Principles Quick Reference</h3>
-    <div class="principles-grid">
-      <div class="principle-item"><div class="principle-code">P1</div><div class="principle-name">Faith-Based</div><div class="principle-desc">Hope through spiritual belief in Jesus Christ unto God our Father</div></div>
-      <div class="principle-item"><div class="principle-code">P2</div><div class="principle-name">Person-Driven</div><div class="principle-desc">Empowering individuals to take charge of their own recovery journey</div></div>
-      <div class="principle-item"><div class="principle-code">P3</div><div class="principle-name">Holistic</div><div class="principle-desc">Physical, emotional, mental, and spiritual health simultaneously</div></div>
-      <div class="principle-item"><div class="principle-code">P4</div><div class="principle-name">Trauma-Informed</div><div class="principle-desc">Understanding and healing from past trauma with compassion</div></div>
-      <div class="principle-item"><div class="principle-code">P5</div><div class="principle-name">Many Pathways</div><div class="principle-desc">Embracing diverse recovery methods and timelines</div></div>
-      <div class="principle-item"><div class="principle-code">P6</div><div class="principle-name">Peer Support</div><div class="principle-desc">Strength through shared experiences, mutual aid, and fellowship</div></div>
-      <div class="principle-item"><div class="principle-code">P7</div><div class="principle-name">Relational</div><div class="principle-desc">Building supportive, loving relationships as the medium of healing</div></div>
-      <div class="principle-item"><div class="principle-code">P8</div><div class="principle-name">Strengths/Responsibility</div><div class="principle-desc">Focusing on strengths; holding individuals capable and accountable</div></div>
-      <div class="principle-item"><div class="principle-code">P9</div><div class="principle-name">Respect</div><div class="principle-desc">Treating everyone with dignity and honor at every stage</div></div>
-      <div class="principle-item"><div class="principle-code">P10</div><div class="principle-name">Culture</div><div class="principle-desc">Respecting and integrating cultural backgrounds and identities</div></div>
-    </div>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">C — Texas Certification &amp; Training Resources</h3>
-    <div class="card-grid">
-      <div class="card gold-card"><h3>Texas HHS</h3><p>Peer Support Services provider guidance and CRPS/PRS certification requirements<br><a href="https://hhs.texas.gov" target="_blank" style="color:var(--navy);font-size:0.8rem">hhs.texas.gov</a></p></div>
-      <div class="card gold-card"><h3>PeerHubTX</h3><p>Centralized training platform for Texas peer support certification<br><a href="https://centralizedtraining.com/peerhubtx" target="_blank" style="color:var(--navy);font-size:0.8rem">centralizedtraining.com/peerhubtx</a></p></div>
-      <div class="card gold-card"><h3>Thrive Peer Recovery</h3><p>Workforce development programs and peer support training<br><a href="https://thrivepeersupport.com/programs/workforce-development" target="_blank" style="color:var(--navy);font-size:0.8rem">thrivepeersupport.com</a></p></div>
-      <div class="card gold-card"><h3>Peer Academy</h3><p>National peer workforce training and certification resources<br><a href="https://peeracademy.org" target="_blank" style="color:var(--navy);font-size:0.8rem">peeracademy.org</a></p></div>
-      <div class="card gold-card"><h3>CA Peer Workforce</h3><p>National peer workforce development resources and best practices<br><a href="https://capeerworkforce.org" target="_blank" style="color:var(--navy);font-size:0.8rem">capeerworkforce.org</a></p></div>
-      <div class="card gold-card"><h3>Peer2Peer Whole Wellness</h3><p>Peer workforce development programs and holistic support<br><a href="https://peer2peerwholewellness.org" target="_blank" style="color:var(--navy);font-size:0.8rem">peer2peerwholewellness.org</a></p></div>
-    </div>
-
-    <h3 class="section-title gap-24" style="font-size:1.3rem">D — Program Completion Certificate</h3>
-    <div class="cert-box">
-      <h2>Certificate of Completion</h2>
-      <div class="cert-sub">RESTORE Them Project — 3-Day Peer Workforce Development Program</div>
-      <p class="text-muted" style="font-size:0.85rem">This certifies that</p>
-      <div class="cert-line"></div>
-      <div class="cert-label">PARTICIPANT NAME</div>
-      <p class="text-muted gap-16" style="font-size:0.85rem">has successfully completed <strong>24 hours</strong> of peer workforce development training<br>aligned with Texas CRPS/PRS certification requirements.</p>
-      <div class="cert-quote">"Nothing About Us Without Us. We can and do recover."</div>
-      <div style="display:flex;justify-content:center;gap:80px;margin-top:28px">
-        <div style="text-align:center">
-          <div style="border-bottom:1px solid var(--navy);width:180px;margin:0 auto 6px"></div>
-          <div class="cert-label">Founder / Program Director</div>
-        </div>
-        <div style="text-align:center">
-          <div style="border-bottom:1px solid var(--navy);width:180px;margin:0 auto 6px"></div>
-          <div class="cert-label">Date of Completion</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mission-quote">
-      "We exist to RESTORE the dignity of those in recovery by using our lived experience to guide them into a transformative relationship with Jesus Christ, empowering them to walk in their God-given purpose."
-    </div>
-  </div>
-
-</div><!-- /tabs-wrapper -->
-
-<!-- FOOTER -->
 <footer class="site-footer">
-  <p><strong>RESTORE Them ALL Ministries, Inc.</strong> &nbsp;|&nbsp; 501(c)(3) Nonprofit &nbsp;|&nbsp; <a href="https://restore1faith.org">restore1faith.org</a> &nbsp;|&nbsp; 512-931-4126</p>
-  <p style="margin-top:6px">RESTORE Peer Support Network &nbsp;|&nbsp; Nolanville, TX &nbsp;|&nbsp; Building Resilience, Wellness, and Recovery</p>
-  <p style="margin-top:6px;font-size:0.75rem;color:rgba(255,255,255,0.35)">Treatment and recovery services are exclusively religious in nature and not subject to DSHS licensure. Nonmedical methods include prayer, moral guidance, spiritual counseling, and scriptural study.</p>
+  <p><strong style="color:rgba(255,255,255,.7)">RESTORE Them ALL Ministries, Inc.</strong> &nbsp;|&nbsp; 501(c)(3) Nonprofit &nbsp;|&nbsp; <a href="https://restore1faith.org">restore1faith.org</a> &nbsp;|&nbsp; 512-931-4126 &nbsp;|&nbsp; Nolanville, TX</p>
+  <p style="margin-top:4px">Building Resilience, Wellness, and Recovery &nbsp;|&nbsp; Peer Support Training Program</p>
 </footer>
 
 <script>
-  function activateTab(id, btn) {
-    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('panel-' + id).classList.add('active');
-    if (btn) {
-      btn.classList.add('active');
-      // sync the other matching button
-      const idMap = {overview:'tab-overview',day1:'tab-day1',day2:'tab-day2',day3:'tab-day3',appendix:'tab-appendix'};
-      const tabEl = document.getElementById(idMap[id]);
-      if (tabEl) tabEl.classList.add('active');
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-  function toggleModule(card) {
-    card.classList.toggle('open');
-  }
+const MODULES = [{"day":1,"id":"1A","code":"1A","title":"What Is Peer Support? Roles, Scope & Ethics","principles":["P2 — Person-Driven","P6 — Peer Support","P9 — Respect"],"anecdote":"A newly minted peer support specialist named Marcus showed up to his very first client meeting wearing a white lab coat he'd borrowed from his cousin — a dentist. He'd reasoned, \"If I look like a professional, they'll trust me more.\" His supervisor took one look at him, pulled him aside, and said, \"Marcus, you are powerful <em>because</em> you've been where they've been. The coat says 'I'm above you.' Your story says 'I've been there too.' Take. It. Off.\" Marcus did. And he became one of the best peer specialists the program ever produced. Moral of the story: your credentials are not on your sleeve — they're in your story. <em>(And please, no borrowed lab coats.)</em>","lesson":"<p>Peer support is built on a radical and beautiful premise: that the person who has <em>walked through the fire</em> is uniquely equipped to sit with someone else in the flames. A Certified Recovery Peer Specialist (CRPS) or Peer Recovery Supporter (PRS) is not a therapist, case manager, or sponsor — they are a <strong>bridge</strong>.</p>\n<p>In Texas, the HHSC defines peer support specialists as individuals who use their lived experience of mental health or substance use recovery to provide support, mentorship, and hope to others in recovery. RESTORE's Person-Driven principle places the recovering individual at the center of every decision about their own life. The peer's role is to walk <em>alongside</em>, not ahead.</p>\n<h4>Key Ethical Foundations:</h4>\n<ul>\n<li><strong>Confidentiality:</strong> What is shared in peer sessions stays there unless there is a safety concern.</li>\n<li><strong>Dual Relationships:</strong> Maintaining clear professional boundaries protects both the peer and the person they serve.</li>\n<li><strong>Scope of Practice:</strong> Peers do not diagnose, prescribe, or provide clinical therapy. They provide support, encouragement, and connection.</li>\n<li><strong>Self-Disclosure:</strong> Sharing your story is a tool, not a therapy session for yourself. Use it intentionally and sparingly.</li>\n</ul>\n<p>RESTORE's principle of <strong>Respect</strong> reminds us that every person in recovery is made in the image of God — worthy of dignity at every stage, no matter how messy the journey looks today.</p>","quiz":[["A peer support specialist and a licensed therapist have the same scope of practice.",false],["CRPS stands for Certified Recovery Peer Specialist.",true],["Peer support is effective because it is built on shared lived experience.",true],["A peer specialist should freely share all details of their personal story in every session.",false],["Confidentiality means a peer specialist must never share anything a client discloses, even serious safety concerns.",false],["RESTORE's Person-Driven principle means the person in recovery sets their own recovery goals.",true],["Dual relationships in peer work can create ethical complications and should be avoided.",true],["Peers can diagnose mental health conditions as part of their support role.",false],["The Texas HHSC defines peer support as a formal, recognized service in behavioral health.",true],["A peer specialist's primary qualification is their clinical training.",false],["RESTORE's principle of Respect means treating every person with dignity regardless of their recovery stage.",true],["Peers should use their personal story as a professional tool of hope, not a personal therapy session.",true],["A PRS (Peer Recovery Supporter) is the same certification as a CRPS.",false],["Maintaining professional limits is an act of care for both the peer and the person they serve.",true],["Lived experience is a disqualifier for peer support work.",false]],"proTip":"You don't have to have it all together to be useful. You just have to be one step ahead on a road you've already walked. Your story is your greatest professional asset — protect it, refine it, and share it with purpose.","scripture":"2 Corinthians 1:4 — 'He comforts us in all our troubles so that we can comfort others. When they are troubled, we will be able to give them the same comfort God has given us.'","reflection":"Describe in your own words what makes peer support different from clinical therapy. How does your personal recovery journey uniquely qualify you to serve as a peer specialist? What is one ethical boundary you commit to maintaining in your peer support role, and why?"},{"day":1,"id":"1B","code":"1B","title":"My Story Is My Credential: Recovery Narrative Workshop","principles":["P1 — Faith-Based","P6 — Peer Support","P7 — Relational"],"anecdote":"Deb had been in recovery for six years and volunteered to share her story at a community event. She practiced for two weeks, wrote seventeen drafts, and memorized every word. Then she got up to speak — and completely blanked. She stood there for five long, silent seconds. Then she took a breath and said, \"I have no idea what I was going to say. But I can tell you this: two years ago I couldn't have stood up here at all.\" The room erupted. People wept. Three people came to her afterward and said it was the most powerful testimony they'd ever heard. The lesson? You don't need a perfect story. You just need an <em>honest</em> one. God uses cracked vessels on purpose.","lesson":"<p>Your recovery story is not a performance — it is a <strong>lifeline</strong>. When shared with purpose, structure, and appropriate boundaries, your narrative becomes the most powerful tool you carry as a peer specialist. Research confirms that hearing \"me too\" from someone who has walked a similar path reduces isolation, increases hope, and improves treatment engagement.</p>\n<p>The RESTORE Story Framework gives your narrative shape without stripping it of its authenticity:</p>\n<ul>\n<li><strong>BEFORE:</strong> Who were you before your turning point? Humanize yourself — don't dramatize or glorify the darkness. The goal is connection, not spectacle.</li>\n<li><strong>DURING:</strong> What did the recovery process actually look like? What helped? What hurt? What did you learn?</li>\n<li><strong>AFTER:</strong> Where are you now? What has changed? What does your life look like today?</li>\n<li><strong>HOPE:</strong> What do you want the listener to know is possible for <em>them</em>? This is the most important part.</li>\n</ul>\n<p>A well-crafted peer narrative is 3–5 minutes long, ends with hope, and centers the <em>listener's</em> journey, not your own. It should open doors, not create walls.</p>\n<p>From a faith perspective, <strong>testimony</strong> has always been central to Christian witness. Revelation 12:11 tells us that believers overcome by \"the blood of the Lamb and the word of their testimony.\" Your story, offered in love, is an act of spiritual warfare against shame, isolation, and hopelessness.</p>","quiz":[["The RESTORE Story Framework has four parts: Before, During, After, and Hope.",true],["A good peer narrative should focus primarily on how bad things were before recovery.",false],["Sharing your personal story is a clinical intervention.",false],["A well-crafted peer narrative is typically 3–5 minutes long.",true],["The 'Hope' section of the RESTORE Story Framework is the least important part.",false],["Dramatizing and glorifying your darkest moments makes your story more powerful.",false],["Testimony is a concept with roots in Christian discipleship and witness.",true],["Your story should ultimately center the listener's journey, not your own.",true],["The 'During' section should include what helped and what hurt during recovery.",true],["A peer specialist should share their full life story in every session.",false],["Research shows that shared lived experience reduces isolation in recovery.",true],["The 'After' section of the narrative describes where you are today.",true],["Self-disclosure in peer work should always be intentional and purposeful.",true],["A recovery narrative needs to be perfectly polished to be effective.",false],["Revelation 12:11 connects overcoming with the word of personal testimony.",true]],"proTip":"Your story does not need to be dramatic to be powerful. Consistency, honesty, and a hopeful ending matter far more than the intensity of the plot. Practice telling your story in 3 minutes. Then practice it again. The people who need to hear it are worth that preparation.","scripture":"Revelation 12:11 — 'They triumphed over him by the blood of the Lamb and by the word of their testimony; they did not love their lives so much as to shrink from death.'","reflection":"Write a rough draft of your recovery story using the RESTORE Story Framework (Before / During / After / Hope). Keep it to 3–5 minutes when read aloud. What part of your story do you find easiest to share? What part is hardest — and why might that part be exactly what someone else needs to hear?"},{"day":1,"id":"1C","code":"1C","title":"10 Guiding Principles Deep Dive (Principles 1–5)","principles":["P1","P2","P3","P4","P5"],"anecdote":"A peer facilitator once asked a training group, \"What does 'holistic' mean to you?\" A man in the back raised his hand and said confidently, \"Holy water?\" The room burst out laughing — including him. But here's the thing: he wasn't entirely wrong. In RESTORE's framework, the spiritual dimension is inseparable from the physical, emotional, and mental. Holistic recovery isn't just a health buzzword — it's the recognition that human beings are whole people made by a whole God, and healing that leaves out any part of the whole leaves out too much. The man in the back taught the whole room something that day. Sometimes a little mispronunciation opens a very big door.","lesson":"<p>SAMHSA's Recovery-Oriented Systems of Care (ROSC) framework identifies ten guiding principles that define what real, comprehensive, community-based recovery support looks like. RESTORE has adopted and spiritually deepened all ten. The first five form the <em>foundation</em> of the recovery worldview:</p>\n<ul>\n<li><strong>P1 — Faith-Based:</strong> Hope is anchored in a relationship with Jesus Christ. Recovery at RESTORE is not merely behavioral — it is transformational. Faith is offered, never coerced.</li>\n<li><strong>P2 — Person-Driven:</strong> The individual in recovery is the expert on their own life. Peer specialists support goals the person chooses, not goals that feel convenient for the system.</li>\n<li><strong>P3 — Holistic:</strong> Recovery addresses the whole person: body, mind, emotions, relationships, and spirit. No part of a human being is irrelevant to the healing process.</li>\n<li><strong>P4 — Trauma-Informed:</strong> Understanding that trauma is nearly universal in the lives of people seeking recovery, and that behaviors which look like problems are often adaptations to pain.</li>\n<li><strong>P5 — Many Pathways:</strong> There is no single correct route to recovery. Peer specialists honor and support diverse paths — whether 12-step, faith-based, medication-assisted, or a combination — without judgment.</li>\n</ul>\n<p>Together, these five principles challenge peer specialists to lay down their assumptions, their timelines, and their personal preferences — and to meet each person exactly where they are.</p>","quiz":[["RESTORE's 10 Guiding Principles are adapted from SAMHSA's ROSC framework.",true],["P1 (Faith-Based) requires all participants to share the same religious beliefs.",false],["P2 (Person-Driven) means the peer specialist decides the goals for the person in recovery.",false],["P3 (Holistic) addresses physical, emotional, mental, and spiritual health simultaneously.",true],["P4 (Trauma-Informed) recognizes that behaviors are often adaptations to past pain.",true],["P5 (Many Pathways) means there is only one acceptable approach to recovery.",false],["RESTORE's Faith-Based principle is offered, never coerced.",true],["The Person-Driven principle means the individual in recovery is the expert on their own life.",true],["Trauma-informed care means assuming everyone has experienced some form of trauma.",true],["A holistic recovery approach ignores spiritual health.",false],["Medication-assisted treatment is incompatible with RESTORE's Many Pathways principle.",false],["RESTORE's principles require peer specialists to set aside their personal assumptions.",true],["The first five principles form the foundation of the RESTORE recovery worldview.",true],["P3 (Holistic) only addresses physical and emotional health.",false],["P4 (Trauma-Informed) asks peer specialists to see problem behaviors as possible trauma responses.",true]],"proTip":"You don't have to personally walk every pathway to honor it. Your job is not to agree with every approach — it's to stay curious, stay humble, and stay focused on the person in front of you. God meets people where they are. So should you.","scripture":"Proverbs 3:5–6 — 'Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.'","reflection":"Which of the first five guiding principles challenges you the most, and why? How has your own recovery journey illustrated one or more of these principles? Write about a specific moment where you saw the 'Many Pathways' principle at work in your life or someone else's."},{"day":1,"id":"1D","code":"1D","title":"Trauma-Informed Care & Boundaries","principles":["P4 — Trauma-Informed","P8 — Strengths/Responsibility"],"anecdote":"A peer specialist named Gloria was doing beautifully in her new role — warm, present, always available. Her supervisor noticed she was answering calls at 11 PM, skipping her own therapy appointments, and crying in the break room. When the supervisor finally sat her down, Gloria said, \"But I just can't say no — they need me.\" Her supervisor replied gently, \"Gloria, do you know what they need most? They need you to still <em>be here</em> in six months.\" Gloria learned that a boundary is not a wall. It's a fence with a gate — and a healthy peer specialist is the one who controls when the gate opens. She learned to say, \"I care about you AND I am not available after 7 PM.\" Both things. True at the same time.","lesson":"<p>Trauma is not a rare exception in the lives of people seeking recovery — it is nearly universal. The Adverse Childhood Experiences (ACE) study, one of the largest studies of its kind, found strong links between childhood trauma and adult mental health, addiction, and physical illness. A trauma-informed approach means understanding that what looks like \"resistance,\" \"manipulation,\" or \"noncompliance\" is often a survival strategy learned in a world that wasn't safe.</p>\n<h4>The Four R's of Trauma-Informed Practice:</h4>\n<ul>\n<li><strong>Realize</strong> — Understand the widespread impact of trauma and its many forms.</li>\n<li><strong>Recognize</strong> — Be able to identify signs of trauma in the people you serve.</li>\n<li><strong>Respond</strong> — Integrate trauma knowledge into your practices, policies, and communications.</li>\n<li><strong>Resist Re-traumatization</strong> — Actively avoid interactions that could replicate the dynamics of past trauma.</li>\n</ul>\n<h4>Professional Boundaries in Peer Work:</h4>\n<p>Healthy professional limits protect <em>both</em> the peer specialist and the person they serve. Boundaries are not rejection — they are structure. Without them, peer specialists burn out, dual relationships form, and the work becomes about the peer's needs rather than the client's recovery.</p>\n<p>RESTORE's Strengths/Responsibility principle applies here too: the peer specialist has a <strong>responsibility</strong> to care for themselves so they can continue to care for others. Self-care is not selfish — it is professional.</p>","quiz":[["The ACE study found links between childhood trauma and adult addiction and mental illness.",true],["Trauma-informed care assumes that most people seeking recovery have never experienced trauma.",false],["'Resistance' in a client is always intentional defiance and should be confronted directly.",false],["The four R's of trauma-informed practice are: Realize, Recognize, Respond, and Resist Re-traumatization.",true],["Professional limits in peer work protect only the client, not the peer specialist.",false],["Answering a client's calls at midnight is an example of healthy professional practice.",false],["Self-care for peer specialists is considered selfish and unprofessional.",false],["RESTORE's Strengths/Responsibility principle applies to the peer specialist's own wellness.",true],["Boundaries in peer work are a form of rejection toward the person in recovery.",false],["Trauma-informed care changes how peer specialists communicate, not just what they do.",true],["Resist Re-traumatization means actively avoiding interactions that could replicate past trauma dynamics.",true],["A peer specialist experiencing burnout can still provide high-quality support indefinitely.",false],["Self-disclosure should be carefully timed and intentionally used as a professional tool.",true],["Behaviors that look like 'manipulation' may actually be learned survival strategies.",true],["Healthy boundaries can be maintained while still expressing genuine care.",true]],"proTip":"The most powerful thing you can model for someone in recovery is a healthy 'no.' If you never set limits, you teach the people you serve that their needs don't have limits either. Your wellness is not optional — it's part of your job description.","scripture":"1 Corinthians 6:19–20 — 'Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own; you were bought at a price. Therefore honor God with your bodies.'","reflection":"Identify two professional limits you need to set or strengthen in your peer support practice. What makes it difficult for you to maintain those limits? How does caring for your own wellness make you a more effective peer specialist? Write about a time when someone else's boundary actually helped you, even if it felt hard in the moment."},{"day":1,"id":"1E","code":"1E","title":"Bible 12-Step Integration & Spiritual Grounding","principles":["P1 — Faith-Based","P3 — Holistic"],"anecdote":"A pastor once asked a man in recovery, \"Have you tried surrendering to God?\" The man replied, \"Pastor, I've been surrendering my whole life — to alcohol, to bad decisions, to people who didn't have my best interests at heart. I'm an expert at surrendering to the wrong things.\" The pastor laughed — and then said something the man never forgot: \"Then you already know how. You just need a better object of surrender.\" That's the genius of Step 1, and it's the genius of the gospel. We're not asking people to learn something entirely foreign. We're asking them to redirect what they already know how to do — toward the One who actually deserves it.","lesson":"<p>The 12-Step model, first developed through Alcoholics Anonymous in the 1930s, has helped millions of people find freedom from addiction. At its core, it is a framework of <strong>surrender, community, accountability, and spiritual transformation</strong> — values deeply rooted in Christian discipleship.</p>\n<p>RESTORE's Bible-based 12-step integration does not simply \"add scripture\" to a secular program. It recognizes that the principles of the steps — admitting powerlessness, turning to a Higher Power, making amends, helping others — are woven throughout the biblical narrative. Consider:</p>\n<ul>\n<li><strong>Step 1</strong> (Admission of powerlessness) — Romans 7:18: \"For I know that good itself does not dwell in me...\"</li>\n<li><strong>Step 3</strong> (Turning will over to God) — Proverbs 3:5-6</li>\n<li><strong>Step 9</strong> (Making amends) — Matthew 5:23-24</li>\n<li><strong>Step 12</strong> (Carrying the message) — Galatians 6:1-2</li>\n</ul>\n<p>Spiritual grounding in recovery is not about religious performance — it is about <em>relationship</em>. God meets people in their mess. RESTORE's holistic model insists that healing which ignores the spirit leaves the deepest wounds untouched. Faith is the anchor that holds when everything else is shifting.</p>\n<p><em>Note: Participation in spiritual elements at RESTORE is always offered in a spirit of invitation, never compulsion. The goal is transformation, not compliance.</em></p>","quiz":[["Alcoholics Anonymous developed the 12-Step model in the 1930s.",true],["RESTORE's Bible-based 12-step approach simply adds scripture references to a secular program.",false],["Step 12 of the 12-Step program involves carrying the message to others who still suffer.",true],["Spiritual grounding at RESTORE is primarily about religious compliance and attendance.",false],["Romans 7:18 is connected to the theme of admitting powerlessness in Step 1.",true],["RESTORE requires all participants to convert to Christianity to complete the program.",false],["The 12-Step model values surrender, community, accountability, and spiritual transformation.",true],["Making amends is a principle found in both Step 9 and in Matthew 5:23-24.",true],["Spiritual healing addresses wounds that physical and emotional healing alone cannot reach.",true],["RESTORE's holistic framework considers spiritual health optional for recovery.",false],["Participation in RESTORE's spiritual elements is offered through invitation, not compulsion.",true],["The Christian concept of discipleship shares values with the 12-Step model.",true],["Galatians 6:1-2 connects to the 12-Step principle of helping others.",true],["Faith in recovery is primarily about performing religious rituals correctly.",false],["Spiritual grounding is defined by relationship with God, not religious performance.",true]],"proTip":"You do not need a theology degree to pray with someone in pain. You just need to show up, be honest, and remind them that the God who created them has not left the room. Presence is theology enough for most people in crisis.","scripture":"Psalm 34:18 — 'The Lord is close to the brokenhearted and saves those who are crushed in spirit.'","reflection":"How has faith or spiritual practice been part of your own recovery journey? What does it mean to you personally that God 'meets people where they are'? How will you hold space for participants whose spiritual background differs from your own, while still offering RESTORE's faith-centered approach?"},{"day":2,"id":"2A","code":"2A","title":"Active Listening, Motivational Interviewing & Empathy Skills","principles":["P6 — Peer Support","P7 — Relational","P2 — Person-Driven"],"anecdote":"Terry was a well-meaning peer specialist with one unfortunate habit: he finished everyone's sentences. A client would begin, \"I've been really struggling with—\" and Terry would jump in: \"—your cravings? Yeah, I know exactly what that's like. Here's what I did...\" After the third time, the client smiled politely, made up an excuse, and never came back. Terry's supervisor said, \"Terry, you have a beautiful heart. And you talk too much.\" She gave him a simple assignment: in every session, speak only 30% of the time. Terry tried it. It nearly killed him. But week two, a client opened up about something she'd never told anyone. All because Terry had finally left enough silence for her to fill it.","lesson":"<p>Most people who want to help others overestimate the power of what they <em>say</em> and underestimate the power of what they <em>hear</em>. Active listening is not passive waiting — it is a highly skilled, intentional practice that communicates to the other person: <strong>\"You matter. I am here. You are not alone.\"</strong></p>\n<h4>The OARS Framework (Motivational Interviewing):</h4>\n<ul>\n<li><strong>O — Open-Ended Questions:</strong> Questions that cannot be answered with \"yes\" or \"no.\" They invite the person to explore and expand their own thinking. \"What has that been like for you?\"</li>\n<li><strong>A — Affirmations:</strong> Genuine recognition of the person's strengths, efforts, and character. Not flattery — truth. \"You showed up today. That took courage.\"</li>\n<li><strong>R — Reflective Listening:</strong> Mirroring back what you hear — not just the words but the emotion underneath. \"It sounds like you feel invisible when that happens.\"</li>\n<li><strong>S — Summarizing:</strong> Pulling together the threads of what was shared and offering it back, with an invitation to correct or add. \"Let me make sure I understand what you've shared...\"</li>\n</ul>\n<p>Motivational Interviewing (MI) is an evidence-based approach to helping people explore and resolve ambivalence about change. It is not persuasion or argument — it is the art of creating the conditions under which someone can hear their own wisdom.</p>\n<p>For peer specialists, OARS is more than a technique — it is an expression of RESTORE's Relational principle: that <em>healing happens in relationship</em>, and relationships require being fully present.</p>","quiz":[["OARS stands for Open-ended questions, Affirmations, Reflective listening, and Summarizing.",true],["Active listening is simply staying quiet while the other person talks.",false],["Open-ended questions can be answered with a simple 'yes' or 'no.'",false],["Motivational Interviewing is primarily a technique for persuading people to change.",false],["Affirmations in OARS are genuine recognitions of a person's strengths, not flattery.",true],["Reflective listening only mirrors the exact words the person used.",false],["Summarizing involves pulling together the threads of a conversation and inviting correction.",true],["RESTORE's Relational principle states that healing happens in relationship.",true],["A peer specialist should aim to speak more than the person they are supporting.",false],["Motivational Interviewing helps people explore and resolve ambivalence about change.",true],["Empathy means feeling the exact same emotions as the person you are supporting.",false],["Open-ended questions invite a person to explore and expand their own thinking.",true],["Creating silence can be a powerful tool in peer support conversations.",true],["Reflective listening communicates 'You matter. I am here. You are not alone.'",true],["Summarizing is only useful at the end of a conversation.",false]],"proTip":"The most healing thing you can offer anyone is your undivided attention. Put the phone away. Stop planning your response. Just listen — to the words, the pauses, the tone, the tears. What people long for most is to be truly heard. Be the person who gives them that.","scripture":"James 1:19 — 'My dear brothers and sisters, take note of this: Everyone should be quick to listen, slow to speak and slow to become angry.'","reflection":"Think about a conversation in which you felt truly heard. What did the other person do (or not do) that made that experience so powerful? Practice the OARS framework with a partner and record what you noticed. What was the hardest part? Which of the four OARS skills comes most naturally to you, and which needs the most practice?"},{"day":2,"id":"2B","code":"2B","title":"Crisis Response for Peer Specialists","principles":["P4 — Trauma-Informed","P8 — Strengths/Responsibility"],"anecdote":"A peer specialist named James got a call from a client at 9 PM. The client said, \"I don't see the point anymore.\" James felt his heart jump into his throat. His training kicked in — he didn't panic, didn't lecture, didn't immediately Google the crisis line number while still on the phone. He said, \"I'm glad you called me. I'm right here. Can you tell me more about what's going on tonight?\" Thirty minutes later, the client was on the phone with a crisis counselor and James had facilitated the warmest warm handoff of his career. Afterward, James sat in his car and cried — not from fear, but from gratitude. He later said, \"I didn't save him. I just didn't drop the phone. Sometimes that's everything.\"","lesson":"<p>Crisis response is one of the most critical skills in a peer specialist's toolkit — and one of the most misunderstood. Peer specialists are not crisis clinicians. They are not trained to conduct formal suicide risk assessments. But they are often the <em>first call</em> someone makes when things fall apart, because they have built trust that no clinical relationship has yet established.</p>\n<h4>QPR: Question, Persuade, Refer</h4>\n<ul>\n<li><strong>Question:</strong> Ask directly and compassionately. \"Are you thinking about suicide?\" Asking the question does not plant the idea — it opens the door. It communicates, \"I see you. I'm not afraid of your pain.\"</li>\n<li><strong>Persuade:</strong> Listen. Validate. Remind them of their reasons to stay. Connect their story to hope. Do not argue, minimize, or bargain.</li>\n<li><strong>Refer:</strong> Connect them to the next level of care. A warm handoff — where the peer stays present and facilitates the connection — is always more effective than handing someone a number.</li>\n</ul>\n<h4>Warning Signs of Crisis:</h4>\n<ul>\n<li>Statements of hopelessness, worthlessness, or being a burden</li>\n<li>Withdrawal from people and activities</li>\n<li>Giving away meaningful possessions</li>\n<li>Sudden calm after a period of depression (may signal a decision has been made)</li>\n<li>Increases in substance use</li>\n</ul>\n<p>After a crisis interaction, peer specialists must practice self-care. Secondary trauma is real. Supervision is essential. The peer who handles crisis calls alone, with no debrief, will not last.</p>","quiz":[["QPR stands for Question, Persuade, Refer.",true],["Peer specialists are trained to conduct formal clinical suicide risk assessments.",false],["Asking someone directly if they are thinking about suicide can plant the idea.",false],["A warm handoff involves the peer specialist staying present while facilitating a connection to care.",true],["Sudden calm after a period of depression can be a warning sign of crisis.",true],["Peer specialists should handle crisis calls alone without supervision or debrief.",false],["Withdrawal from people and activities can be a warning sign of mental health crisis.",true],["The 'Persuade' step of QPR involves arguing with the person to change their mind.",false],["Secondary trauma is a real risk for peer specialists who work with people in crisis.",true],["Giving away meaningful possessions can be a warning sign of suicidal intent.",true],["A peer specialist's most important asset in a crisis is having built prior trust.",true],["Increasing substance use can be a warning sign of a developing crisis.",true],["Peer specialists should immediately hang up and call 911 without talking to the person first.",false],["The 'Question' step communicates: 'I see you. I'm not afraid of your pain.'",true],["Self-care after crisis interactions is a professional responsibility for peer specialists.",true]],"proTip":"You don't have to have all the answers in a crisis — you just have to stay on the line. Presence, calm, and connection are the intervention. You are the bridge between someone's worst moment and the help that can carry them forward. Train for this. Debrief after this. And never go through it alone.","scripture":"Psalm 46:1 — 'God is our refuge and strength, an ever-present help in trouble.'","reflection":"How do you personally respond to high-stress or crisis situations? What are your 'tells' — the signs that you are feeling overwhelmed? Write a personal crisis protocol: the three things you will do in the first five minutes of a crisis call. Who is your supervisor or debrief partner you will call after a difficult interaction?"},{"day":2,"id":"2C","code":"2C","title":"10 Guiding Principles Deep Dive (Principles 6–10)","principles":["P6","P7","P8","P9","P10"],"anecdote":"A peer specialist was assigned to work with a client from a cultural background very different from her own. She did her research, read articles, watched documentaries. Then she walked into the first session and proceeded to explain the client's own culture back to him. He listened patiently. Then he said, \"That's very interesting. Now would you like to know what it's actually like?\" She laughed. He laughed. And they started over — with her listening and him teaching. She later told her supervisor, \"I thought cultural competence meant knowing things about people. I learned it means being willing to not know, and to ask.\" That's the difference between competence and humility. One fills you up. The other empties you out just enough to really learn.","lesson":"<p>Principles 6–10 move from the internal worldview of recovery into its external expression — in relationships, culture, and community. Together they describe <em>how</em> peer support is delivered, not just what it believes.</p>\n<ul>\n<li><strong>P6 — Peer Support:</strong> The power of shared experience — \"me too\" — is the single greatest differentiator of peer-delivered services. It creates permission for hope where clinical authority cannot.</li>\n<li><strong>P7 — Relational:</strong> Recovery does not happen in isolation. It happens in relationship. The quality of connection between a peer specialist and the person they serve is the medium through which healing travels.</li>\n<li><strong>P8 — Strengths/Responsibility:</strong> People in recovery are not problems to be fixed — they are people with gifts, resilience, and capacity. The peer specialist's job is to help them see and use what they already have.</li>\n<li><strong>P9 — Respect:</strong> Every person, at every stage of recovery — including relapse — deserves dignity. RESTORE's vision: \"We see you. You are valuable right now.\" Not when you get better. Now.</li>\n<li><strong>P10 — Culture:</strong> Race, ethnicity, faith tradition, family system, and community history all shape how a person understands recovery. Cultural humility — not competence — is the goal: an ongoing posture of learning, not a destination of knowing.</li>\n</ul>\n<p>These principles together describe a peer specialist who is relationally invested, strengths-focused, unconditionally respectful, and humbly curious about the cultural world of the person they serve.</p>","quiz":[["P6 (Peer Support) is the only principle related to relationships.",false],["The 'me too' moment created by shared experience is unique to peer-delivered services.",true],["P7 (Relational) states that recovery happens in isolation, without community.",false],["P8 (Strengths/Responsibility) means focusing on what a person in recovery can already do.",true],["P9 (Respect) applies to people in recovery only when they are making progress.",false],["Cultural humility is an ongoing posture of learning, not a fixed destination.",true],["P10 (Culture) recognizes that race, ethnicity, and faith tradition shape recovery.",true],["The Relational principle means the quality of connection is the medium through which healing travels.",true],["RESTORE's vision of respect is: 'We see you. You are valuable right now.'",true],["Cultural competence and cultural humility mean the same thing.",false],["P8 (Strengths/Responsibility) positions people in recovery as problems to be fixed.",false],["P6 (Peer Support) creates permission for hope where clinical authority cannot.",true],["Relapse disqualifies a person from being treated with dignity under P9.",false],["A peer specialist should approach a client's cultural background with curiosity, not assumptions.",true],["Principles 6–10 describe how peer support is delivered in relationship and community.",true]],"proTip":"You will never fully understand anyone else's cultural experience — and that's okay. What matters is that you stay curious, stay humble, and stay in the room. Ask more questions than you answer. Let people be the experts on their own lives. That is cultural humility in action.","scripture":"Romans 15:7 — 'Accept one another, then, just as Christ accepted you, in order to bring praise to God.'","reflection":"Which of principles 6–10 challenges you most in your current relationships and approach? Write about a specific experience where cultural difference affected a relationship or conversation. How did you handle it? How would you handle it differently now with these principles in mind?"},{"day":2,"id":"2D","code":"2D","title":"Holistic Recovery Planning — Building the Plan","principles":["P3 — Holistic","P2 — Person-Driven"],"anecdote":"A man named Robert came into his first peer session and announced: \"I want to get my life together.\" His peer specialist, Yolanda, said, \"Great. What does 'together' look like for you?\" Robert stared at her blankly. He'd never actually been asked that. For twenty years, people had told him what \"together\" should look like. Yolanda handed him a blank worksheet with four boxes: body, mind, spirit, connections. She said, \"Fill in one thing you want in each box. Not what you should want. What you actually want.\" Robert cried. Then he picked up the pen. That worksheet became the first recovery plan he ever actually followed — because it was the first one that was ever actually his.","lesson":"<p>A recovery plan that lives only in a filing cabinet doesn't help anyone. A recovery plan that the person actually created, for goals they actually chose, in a format that reflects their actual life — that is a living document with real power.</p>\n<p>RESTORE's holistic recovery model addresses four domains, recognizing that lasting healing requires attention to all of them:</p>\n<ul>\n<li><strong>Physical Health:</strong> Sleep hygiene, nutrition, movement, medical care, medication management. The body is the home of the spirit — it matters.</li>\n<li><strong>Emotional & Mental Health:</strong> Coping strategies, emotional regulation, counseling, support groups, journaling, trigger identification. Mental health is not a weakness — ignoring it is.</li>\n<li><strong>Spiritual Health:</strong> Faith practice, prayer, scripture engagement, spiritual community, pastoral relationship. Where is the person anchored when everything else shifts?</li>\n<li><strong>Social & Vocational Health:</strong> Relationships, employment or educational goals, housing stability, community integration. People need to belong somewhere and contribute to something.</li>\n</ul>\n<p>As a peer specialist, your role in recovery planning is not to complete the plan <em>for</em> the person — it is to ask the right questions, celebrate every entry, and help them identify the next small step in each domain. Small steps compound into transformative change.</p>","quiz":[["RESTORE's holistic recovery model has four domains: physical, emotional/mental, spiritual, and social/vocational.",true],["A peer specialist should complete the recovery plan on behalf of the person they serve.",false],["Physical health is irrelevant to spiritual and emotional recovery.",false],["A Person-Driven recovery plan reflects the goals the individual actually chose.",true],["Sleep and nutrition are part of the Physical Health domain in RESTORE's model.",true],["Journaling and trigger identification fall under the Emotional & Mental Health domain.",true],["Spiritual health only matters for people who attend church regularly.",false],["Social and vocational health includes employment goals and community integration.",true],["A recovery plan that a person did not help create is less likely to be followed.",true],["Small steps in recovery planning are less valuable than large, dramatic changes.",false],["Housing stability is part of the Social & Vocational Health domain.",true],["Peer specialists celebrate every entry in a recovery plan, no matter how small.",true],["Recovery planning only needs to address the domain with the most obvious problems.",false],["A holistic approach to recovery treats the person as a whole, not a collection of symptoms.",true],["Medication management is part of the Physical Health domain.",true]],"proTip":"Help the people you serve think small. Not because small is insignificant — but because small is sustainable. One glass of water a day, one prayer in the morning, one phone call to a sober friend. These are the bricks that build a new life. Celebrate every single one.","scripture":"Jeremiah 29:11 — 'For I know the plans I have for you,' declares the Lord, 'plans to prosper you and not to harm you, plans to give you hope and a future.'","reflection":"Using RESTORE's four recovery domains, draft your own personal recovery plan. What is one specific, achievable goal in each domain? Which domain is your greatest strength right now? Which is most in need of attention? How will you use this planning process when supporting others?"},{"day":2,"id":"2E","code":"2E","title":"Life Skills Development & Person-Centered Support","principles":["P2 — Person-Driven","P8 — Strengths/Responsibility"],"anecdote":"A peer specialist named Carl was working with a client who had just gotten out of a transitional housing program. The client wanted to open a bank account — something he'd never done. Carl made the appointment, drove him there, filled out the paperwork, and handed over the completed forms. The client was quiet the whole way home. Finally, he said, \"Carl, I appreciate it, man. But I'm an adult. I coulda done that myself if you'd just told me where to go.\" Carl went home and thought about it for a long time. The next client he had who needed to open a bank account? Carl gave him the address and the list of what to bring. Then he waited by the phone. That client called afterward, voice cracking: \"I did it. I actually did it.\" That phone call was the whole point.","lesson":"<p>One of the most counterintuitive challenges in peer support is learning when <em>not</em> to help. Or rather — learning how to help in a way that builds the other person's capacity rather than your own sense of usefulness.</p>\n<p>RESTORE's Person-Driven and Strengths/Responsibility principles call peer specialists to resist the urge to \"fix\" and instead to <em>empower</em>. This is life skills support: walking alongside someone as they develop competencies they may never have had the chance to learn.</p>\n<h4>Core Life Skills Areas:</h4>\n<ul>\n<li><strong>Financial Basics:</strong> Budgeting, understanding benefits, opening and maintaining a bank account, avoiding predatory financial products.</li>\n<li><strong>Communication Skills:</strong> Advocacy for oneself and one's needs, navigating conflict without escalation, effective self-expression in clinical, legal, and employment settings.</li>\n<li><strong>Daily Structure & Routine:</strong> A recovery-supportive daily schedule is protective against relapse. Structure is not restriction — it is the scaffolding on which a new life is built.</li>\n<li><strong>SMART Goal-Setting:</strong> Specific, Measurable, Achievable, Relevant, Time-bound goals translate abstract desires into concrete action steps.</li>\n<li><strong>Community Referral Mapping:</strong> Knowing the resources in your community and being able to connect people to them effectively is a core peer competency.</li>\n</ul>\n<p>Jesus himself was a master at this kind of empowerment. He didn't carry people's crosses for them — he walked beside them and equipped them to carry their own.</p>","quiz":[["A peer specialist should complete tasks on behalf of the person to be most helpful.",false],["SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound.",true],["Empowering someone means building their capacity, not doing things for them.",true],["Daily structure and routine have no significant impact on recovery outcomes.",false],["Financial basics in peer support include understanding benefits and avoiding predatory products.",true],["A recovery-supportive daily schedule is described as scaffolding on which a new life is built.",true],["Community referral mapping means knowing local resources and connecting people to them.",true],["The Person-Driven principle supports peers making decisions on behalf of people in recovery.",false],["Communication skills include self-advocacy in clinical, legal, and employment settings.",true],["Achieving a small goal independently builds a person's confidence and capacity.",true],["Life skills support is only necessary for people who have severe mental illness.",false],["RESTORE's Strengths/Responsibility principle asks peers to resist the urge to 'fix.'",true],["Structure in daily life is described as restriction, not support.",false],["The peer specialist's role in life skills is to empower, not to enable dependency.",true],["SMART goal-setting translates abstract desires into concrete, achievable action steps.",true]],"proTip":"The most powerful words you can say to someone building life skills are: 'You did that.' Not 'We did that.' Not 'I helped you do that.' Their hands. Their choice. Their victory. Let it be theirs. Your job is to be close enough to celebrate, not so close that you accidentally take credit.","scripture":"Philippians 4:13 — 'I can do all this through him who gives me strength.'","reflection":"Recall a time when someone did something for you that you could have done yourself. How did it make you feel? Now recall a time when someone equipped you to do something hard on your own. What was the difference? How will you apply this insight in your peer support practice? Write about one life skills area where you personally still want to grow."},{"day":2,"id":"2F","code":"2F","title":"Cultural Humility & Community in Recovery","principles":["P10 — Culture","P7 — Relational"],"anecdote":"A peer specialist named Keisha was placed with a client from a tightly-knit immigrant community where it was considered deeply shameful to discuss family struggles with outsiders. Keisha's supervisor had warned her: \"She may never open up. Just build the relationship.\" So Keisha showed up every week. They talked about food, about the weather, about the client's grandchildren. Eight weeks in, the client quietly said, \"My son... he is not well. I don't know what to do.\" Keisha didn't jump. She didn't fix. She just nodded and said, \"Tell me about him.\" Three months later, the family was connected to a culturally specific counseling service. Keisha said afterward: \"I didn't do anything. I just stayed.\" Staying, it turns out, is a deeply cultural act of respect.","lesson":"<p>Culture is not a demographic category — it is the lens through which a person understands themselves, their suffering, and their healing. It shapes what \"recovery\" looks like, who can be trusted, what help is acceptable, and what constitutes success. A peer specialist who ignores culture will consistently misunderstand the people they are trying to serve.</p>\n<h4>Cultural Humility vs. Cultural Competence:</h4>\n<ul>\n<li><strong>Cultural competence</strong> implies a body of knowledge you can acquire and then possess: \"I know about X culture.\"</li>\n<li><strong>Cultural humility</strong> is an ongoing practice: \"I am always learning about this person's experience. I hold my assumptions loosely. I ask more than I assume.\"</li>\n</ul>\n<p>The barriers to culturally humble peer support often include:</p>\n<ul>\n<li>Assuming your recovery experience is universal</li>\n<li>Projecting your cultural norms onto someone else's situation</li>\n<li>Treating cultural differences as obstacles rather than as richness</li>\n<li>Moving too fast toward \"fixing\" before building cultural trust</li>\n</ul>\n<p>RESTORE's principle that \"belief and faith are personal choices\" extends naturally to culture. Recovery looks different in different communities. A Black church, a Latino family system, a Native American healing tradition — all of these may be <em>recovery assets</em>, not obstacles, if the peer specialist is humble enough to recognize them.</p>","quiz":[["Cultural competence means you have achieved a complete understanding of another culture.",false],["Cultural humility is an ongoing practice of learning, not a destination of knowing.",true],["A peer specialist's own recovery experience is universal to everyone they serve.",false],["Culture shapes what 'recovery' looks like, who can be trusted, and what help is acceptable.",true],["Moving too fast to 'fix' can damage culturally specific trust in peer relationships.",true],["Faith communities and cultural traditions can be recovery assets, not just obstacles.",true],["RESTORE's principle that 'belief and faith are personal choices' extends to cultural practice.",true],["Cultural humility means asking more than assuming.",true],["Cultural barriers in peer support are best addressed by applying universal techniques.",false],["Staying present over time is itself an act of cultural respect in many communities.",true],["A peer specialist should project their own cultural norms onto every client relationship.",false],["Cultural differences in recovery should be treated as richness, not obstacles.",true],["Recovery looks the same in every cultural community.",false],["Building cultural trust often takes longer than building professional rapport.",true],["RESTORE's Relational principle supports taking time to build trust before attempting intervention.",true]],"proTip":"The single best question you can ask a person from a different cultural background is: 'Help me understand what that means in your family.' You will never go wrong with that question. Curiosity is the most respectful thing you can offer anyone.","scripture":"Galatians 3:28 — 'There is neither Jew nor Gentile, neither slave nor free, nor is there male and female, for you are all one in Christ Jesus.'","reflection":"Describe your own cultural background and how it has shaped your understanding of mental health, recovery, and help-seeking. What assumptions do you carry into peer support relationships? Identify one specific cultural group you may serve and write three questions you would want to ask — not to learn about the culture in general, but to understand this specific person."},{"day":3,"id":"3A","code":"3A","title":"Professionalization: Resume, Interview & Workplace Skills","principles":["P2 — Person-Driven","P8 — Strengths/Responsibility"],"anecdote":"A woman named Diane had been in recovery for four years and decided to apply for a peer support position. She sat down to write her resume and stared at the blank page for twenty minutes. Then she wrote: \"2016–2020: Unemployed due to addiction.\" She handed it to her peer mentor, who looked at it and said, \"Diane, you weren't unemployed. You were surviving something most people couldn't have survived. You were managing a chronic illness with no treatment and no support system. You developed crisis management skills, emotional resilience, and a depth of empathy that can't be taught in any classroom. Now let's talk about how to say all of that on a resume.\" Diane got the job. She still has the original blank page framed on her wall.","lesson":"<p>Entering the peer support workforce requires more than lived experience — it requires the professional skills to communicate that experience in environments that have their own cultures, languages, and expectations. Professionalization does not mean hiding who you are; it means learning how to present who you are in ways that open doors.</p>\n<h4>Resume Writing for Peer Specialists:</h4>\n<ul>\n<li>Translate lived experience into professional language: \"Crisis navigation,\" \"Community resource coordination,\" \"Peer mentorship,\" \"Advocacy.\"</li>\n<li>Include volunteer, faith community, and informal support roles — these are real experience.</li>\n<li>Address employment gaps honestly but strategically — frame them around skills gained, not time lost.</li>\n</ul>\n<h4>Interview Preparation:</h4>\n<ul>\n<li>Practice the STAR method: Situation, Task, Action, Result.</li>\n<li>Prepare to answer: \"Tell me about your recovery journey\" with appropriate professional self-disclosure.</li>\n<li>Research the organization before the interview — know their mission and how your values align.</li>\n</ul>\n<h4>Workplace Documentation:</h4>\n<ul>\n<li>Progress notes should be objective, specific, and focused on the person's words and goals.</li>\n<li>Confidentiality applies to written documentation as much as verbal conversations.</li>\n<li>Timeliness in documentation is a professional responsibility, not a bureaucratic annoyance.</li>\n</ul>","quiz":[["A peer specialist's resume should hide all evidence of their recovery journey.",false],["Lived experience can be translated into professional language on a resume.",true],["The STAR method stands for Situation, Task, Action, Result.",true],["Volunteer and faith community roles do not count as professional experience.",false],["Employment gaps should always be left unexplained on a resume.",false],["Professional self-disclosure in an interview means sharing everything about your recovery.",false],["Researching an organization before an interview demonstrates professional preparation.",true],["Progress notes should be objective, specific, and focused on the person's words and goals.",true],["Confidentiality applies to written documentation as well as verbal conversations.",true],["Timeliness in documentation is a professional responsibility.",true],["Professionalization means hiding your identity as a person in recovery.",false],["Crisis navigation and peer mentorship are legitimate professional competencies.",true],["A peer specialist should know the organization's mission before their interview.",true],["Personal statement writing helps articulate the 'why' behind choosing peer support work.",true],["The ability to present yourself professionally opens doors to greater impact.",true]],"proTip":"Your resume is not a confession — it is a highlight reel. You get to decide what story it tells. Tell the one that leads to the room where you can do the most good. And in the interview, remember: they need you as much as you need them. Peer specialists with real lived experience are not a dime a dozen. You are rare. Own it.","scripture":"Colossians 3:23 — 'Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.'","reflection":"Write a first draft of your professional personal statement: who you are, why you chose peer support, and what you bring to the role. Then write down the three interview questions you dread most — and practice answering them out loud. What does your employment history tell, and how can you frame it in a way that is both honest and forward-looking?"},{"day":3,"id":"3B","code":"3B","title":"Texas CRPS/PRS Certification Pathway","principles":["P8 — Strengths/Responsibility","P2 — Person-Driven"],"anecdote":"A peer specialist candidate named Leo looked at the CRPS certification requirements and nearly gave up before he started. \"Training hours, supervised hours, an exam — I barely graduated high school,\" he told his mentor. His mentor, a certified peer specialist herself, laughed and said, \"Leo, you survived a decade of addiction, rebuilt every relationship in your family, and learned how to navigate a healthcare system most college graduates can't figure out. You think a multiple-choice exam is going to stop you?\" Leo passed on his first attempt. At the celebration, he said, \"The hardest certification I ever got was staying sober. This one just required a #2 pencil.\" The room erupted. He still carries that pencil in his wallet.","lesson":"<p>The Texas CRPS (Certified Recovery Peer Specialist) and PRS (Peer Recovery Supporter) certifications are the formal credentials that unlock career opportunities, billing eligibility, and professional recognition for peer support workers in the state of Texas. Understanding the pathway is essential for every participant in this training.</p>\n<h4>Texas CRPS Certification Pathway:</h4>\n<ul>\n<li><strong>Step 1 — Eligibility:</strong> Self-identify as a person in recovery from a mental health condition or substance use disorder. No clinical degree required.</li>\n<li><strong>Step 2 — Training Hours:</strong> Complete a minimum number of HHSC-approved training hours. This 3-day RESTORE program contributes toward your total.</li>\n<li><strong>Step 3 — Supervised Work:</strong> Complete documented peer support work under a qualified supervisor. Keep detailed logs.</li>\n<li><strong>Step 4 — Examination:</strong> Pass the state certification exam. Study materials are available through PeerHubTX and other resources.</li>\n<li><strong>Step 5 — Renewal:</strong> Maintain certification through continuing education and ethics training.</li>\n</ul>\n<h4>Key Resources:</h4>\n<ul>\n<li>Texas Health & Human Services: hhs.texas.gov</li>\n<li>PeerHubTX: centralizedtraining.com/peerhubtx</li>\n<li>Thrive Peer Recovery Services: thrivepeersupport.com/programs/workforce-development</li>\n<li>Peer Academy: peeracademy.org</li>\n</ul>\n<p>Certification is not the finish line — it is the starting gate. The credential matters. The work beyond it matters more.</p>","quiz":[["CRPS stands for Certified Recovery Peer Specialist.",true],["A clinical degree such as a Master's in Social Work is required for CRPS certification in Texas.",false],["The Texas CRPS pathway requires completing HHSC-approved training hours.",true],["PeerHubTX is a resource for Texas peer support certification training.",true],["CRPS certification never requires renewal after it is obtained.",false],["This RESTORE 3-day program contributes toward HHSC-approved training hour requirements.",true],["Supervised work hours must be documented carefully for the certification process.",true],["The certification exam for CRPS requires a prior college degree.",false],["Continuing education is required to maintain CRPS certification.",true],["The Texas Health & Human Services agency oversees peer support certification in the state.",true],["CRPS certification opens access to billing eligibility for peer support services.",true],["Self-identifying as a person in recovery is a key eligibility requirement for CRPS.",true],["Thrive Peer Recovery Services offers workforce development programs aligned with certification.",true],["Certification is the finish line in peer support professional development.",false],["Peer Academy is a national resource for peer workforce training and certification.",true]],"proTip":"Start your hour log today. Seriously — today. The hours you think you'll remember, you won't. The documentation you think is optional, isn't. Treat your certification pathway like a savings account: put something in consistently, and the balance builds. Your future self will thank your current self for starting now.","scripture":"Proverbs 21:5 — 'The plans of the diligent lead to profit as surely as haste leads to poverty.'","reflection":"Map your personal certification timeline. Given what you know today, what is your target date for CRPS certification? What training hours do you still need? Who will be your supervisor? What will you need to put in place to make this happen? Write it down as if it's already decided — because it is."},{"day":3,"id":"3C","code":"3C","title":"Mentorship, Supervision & Career Ladders","principles":["P6 — Peer Support","P7 — Relational"],"anecdote":"A newly certified peer specialist named Angela was so nervous about her first supervision meeting that she prepared a sixteen-point agenda. Her supervisor looked at it, smiled, and said, \"Angela, I only have three questions: What went well? What was hard? And where do you need support?\" Angela stared. \"That's... it?\" \"That's everything,\" her supervisor said. \"If we know those three things every week, we can build anything.\" Angela later said those three questions became the template for every peer session she ever ran. Supervision taught her supervision. And she became the kind of supervisor who asked only three questions — and listened very carefully to all three answers.","lesson":"<p>Mentorship and supervision are not quality control mechanisms — they are the scaffolding on which excellent peer specialists are built. No one becomes a great peer specialist alone. The relational nature of the work requires relational support structures.</p>\n<h4>The RESTORE Mentorship Model:</h4>\n<ul>\n<li>Each participant is paired with a trained RESTORE peer mentor who has navigated the certification and employment process.</li>\n<li>Mentors meet regularly with mentees, providing guidance, accountability, and encouragement.</li>\n<li>The relationship models the very dynamics peer specialists will use with those they serve.</li>\n</ul>\n<h4>Professional Supervision:</h4>\n<ul>\n<li>Supervision provides a structured space to debrief difficult cases, process emotional reactions, and develop professional skills.</li>\n<li>Good supervision is strengths-based: it begins with what went well before addressing what needs growth.</li>\n<li>Supervision hours count toward certification requirements — document them carefully.</li>\n</ul>\n<h4>The Career Ladder:</h4>\n<ul>\n<li><strong>Peer Advocate</strong> (entry-level volunteer or pre-certification)</li>\n<li><strong>Certified Peer Specialist</strong> (CRPS/PRS credential)</li>\n<li><strong>Lead Peer Specialist</strong> (experienced, takes on complex cases and cohort facilitation)</li>\n<li><strong>Peer Supervisor</strong> (provides supervision to other peer specialists)</li>\n</ul>\n<p>The career ladder exists not just for individual advancement, but because the field needs experienced, trained peer supervisors who understand the work from the inside.</p>","quiz":[["Supervision in peer support work is a quality control mechanism, not a developmental resource.",false],["The RESTORE mentorship model pairs each participant with a trained peer mentor.",true],["Good supervision begins with what went well before addressing areas for growth.",true],["Supervision hours can count toward CRPS certification requirements.",true],["A Lead Peer Specialist may take on complex cases and facilitate peer cohorts.",true],["The career ladder in peer support goes from Peer Advocate to Peer Supervisor.",true],["Mentorship relationships model the same dynamics peers use with those they serve.",true],["A peer specialist can fully develop their skills without any supervision or mentorship.",false],["The peer supervisor role requires understanding the work from the inside.",true],["Supervision provides space to debrief difficult cases and process emotional reactions.",true],["RESTORE's mentorship pairs are based on RESTORE's Relational principle.",true],["Documenting supervision hours is a professional responsibility for certification.",true],["The career ladder exists only for individual advancement, not for field development.",false],["A Certified Peer Specialist holds a CRPS or PRS credential.",true],["Mentors have already navigated the certification and employment process themselves.",true]],"proTip":"Find your mentor before you think you need one. Get your supervisor before your caseload gets heavy. Build your support structures before the storm, not during it. The peer specialists who last — and thrive — are the ones who know they cannot do this alone, and who build their team accordingly.","scripture":"Proverbs 27:17 — 'As iron sharpens iron, so one person sharpens another.'","reflection":"Who are the mentors and accountability partners in your life right now? What gaps exist in your support system? Write a 'career trajectory' statement: where you are today, where you want to be in 2 years, and the specific steps (certifications, supervised hours, relationships) that will get you there."},{"day":3,"id":"3D","code":"3D","title":"Relapse Prevention & Sustained Recovery","principles":["P3 — Holistic","P5 — Many Pathways"],"anecdote":"A woman in long-term recovery told her peer support group: \"I relapsed after seven years.\" The room went very still. Then she continued: \"And I want to tell you exactly how it happened — not because I'm ashamed, but because the steps that led there were so quiet and so ordinary that I almost missed them. It started with skipping one meeting. Then one prayer. Then one call I didn't return. Then one night I told myself I was 'cured.' And then there was a bottle of wine at a work event and a voice in my head that said, 'You've earned this.' The relapse didn't happen on a Tuesday at 8 PM. It happened over eighteen months of tiny choices.\" The room broke open. So did the conversation. That's what honest testimony does.","lesson":"<p>Relapse is not a sudden event — it is a process. Understanding this reframes relapse from a character failure into a recoverable, observable sequence of events that can be interrupted at multiple points. This reframe reduces shame and increases agency.</p>\n<h4>The Relapse Process:</h4>\n<ul>\n<li><strong>Emotional relapse:</strong> Bottling emotions, isolating, not asking for help, poor self-care. No conscious thought of using — but the conditions are being set.</li>\n<li><strong>Mental relapse:</strong> Thinking about using. Romanticizing past use. Minimizing consequences. Bargaining.</li>\n<li><strong>Physical relapse:</strong> The actual return to substance use or destructive behavior.</li>\n</ul>\n<h4>WRAP (Wellness Recovery Action Plan):</h4>\n<ul>\n<li><strong>Wellness Toolbox:</strong> A personal list of strategies, activities, and relationships that support daily wellness.</li>\n<li><strong>Daily Maintenance Plan:</strong> What I need to do every day to stay well — sleep, prayer, connection, exercise.</li>\n<li><strong>Crisis Plan:</strong> What a crisis looks like for me. What helps. Who to call. What I authorize others to do on my behalf.</li>\n<li><strong>Post-Crisis Plan:</strong> How I recover after a hard season. Who walks with me. How I return to my Daily Maintenance Plan.</li>\n</ul>\n<p>RESTORE's aftercare model — ongoing support groups, mentorship, and community — provides the relational infrastructure that makes WRAP plans sustainable. Recovery is not a destination; it is a daily practice.</p>","quiz":[["Relapse is always a sudden, unexpected event with no warning signs.",false],["Emotional relapse involves bottling emotions and isolating, often before any thought of using.",true],["WRAP stands for Wellness Recovery Action Plan.",true],["A Daily Maintenance Plan lists what a person needs to do each day to stay well.",true],["Mental relapse involves romanticizing past substance use and minimizing consequences.",true],["A Crisis Plan identifies what a crisis looks like for the individual and what helps.",true],["Relapse always indicates permanent failure in the recovery process.",false],["The WRAP Wellness Toolbox is a list of strategies and relationships that support wellness.",true],["RESTORE's aftercare model includes ongoing support groups, mentorship, and community.",true],["Physical relapse is the first stage of the relapse process.",false],["Reducing shame around relapse increases a person's ability to seek help quickly.",true],["A Post-Crisis Plan addresses how a person returns to wellness after a difficult season.",true],["Peer accountability partnerships are structured check-in agreements between cohort members.",true],["Recovery is a daily practice, not a fixed destination.",true],["Understanding relapse as a process gives people more opportunities to interrupt it.",true]],"proTip":"Know your warning signs before you need them — and write them down. Then give that list to someone who loves you and ask them to say something if they see it. We are terrible at spotting our own early signs. That's not weakness — it's human. Build your early warning system into your relationships, not just your memory.","scripture":"1 Peter 5:8-9 — 'Be sober-minded; be watchful. Your adversary the devil prowls around like a roaring lion, seeking someone to devour. Resist him, firm in your faith.'","reflection":"Identify your personal early warning signs of emotional relapse — the quiet ones that show up before any obvious struggle. Write your personal Daily Maintenance Plan: the non-negotiable daily practices that keep you well. Who is your accountability partner, and what have you asked them to do if they notice your warning signs?"},{"day":3,"id":"3E","code":"3E","title":"Peer Work in Diverse Settings","principles":["P5 — Many Pathways","P10 — Culture"],"anecdote":"A peer specialist named Jerome was assigned to a hospital-based peer role and showed up for his first shift in his Sunday best. A nurse pulled him aside and said, \"You'll want to change before you go onto the unit. These patients have been in the hospital for weeks — they can't figure out if you're a patient, a doctor, or a pastor.\" Jerome laughed and changed into khakis and a polo. He later said that was his first lesson in setting-specific wisdom: the same message lands differently depending on what you're wearing, where you're standing, and who's listening. Read the room. Dress for the relationship you're trying to build, not the position you want people to think you have.","lesson":"<p>Peer support is not a one-size-fits-all service delivered in a single setting. Peer specialists work across a remarkable range of environments, each with its own culture, structure, expectations, and opportunities. Being effective across settings requires adaptability, humility, and setting-specific knowledge.</p>\n<h4>Four Major Settings:</h4>\n<ul>\n<li><strong>Hospital / Inpatient:</strong> Peer specialists often provide warm handoffs from clinical care to community resources at discharge. The clinical environment has its own hierarchy, language, and pace. Peers must navigate it as guests while maintaining their authentic identity as people with lived experience.</li>\n<li><strong>Community Outreach:</strong> Meeting people where they are — sometimes literally, in shelters, on streets, or in parks. The goal is engagement without coercion. Trust precedes services. Relationship precedes change.</li>\n<li><strong>Criminal Justice:</strong> Reentry is one of the most high-stakes and underserved transitions in behavioral health. Peer specialists in justice settings navigate unique legal, ethical, and relational terrain. Many clients in this setting have deep distrust of systems — and for good reason.</li>\n<li><strong>Peer-Run Organizations:</strong> Settings where recovery self-determination is the operating principle. Peer specialists here may have more autonomy and leadership opportunity than in clinical settings — and more responsibility to model the culture they are creating.</li>\n</ul>\n<p>Across every setting, the peer specialist's core identity remains constant: someone who has been there, who cares, and who believes recovery is possible.</p>","quiz":[["Peer support is delivered effectively in only one type of setting.",false],["Hospital-based peer specialists often provide warm handoffs at discharge.",true],["In community outreach settings, trust precedes services and relationship precedes change.",true],["Criminal justice reentry is described as one of the most high-stakes behavioral health transitions.",true],["People with criminal justice involvement often have deep distrust of institutional systems.",true],["Peer-run organizations offer more autonomy and leadership opportunity than clinical settings.",true],["A peer specialist should present the same way in every setting regardless of context.",false],["Warm handoffs involve the peer staying present while facilitating a connection to care.",true],["Community outreach never involves meeting clients in non-traditional locations.",false],["Peer specialists in criminal justice settings must navigate unique legal and ethical terrain.",true],["A peer specialist's core identity remains constant across all settings.",true],["Peer-run organizations operate on the principle of recovery self-determination.",true],["Hospital settings have their own hierarchy and language that peers must learn to navigate.",true],["Adaptability and setting-specific knowledge are required for effective peer work.",true],["In inpatient settings, peers maintain their identity as people with lived experience.",true]],"proTip":"Every setting has a culture. Before you walk into a new environment, find out who the informal leaders are, what the unwritten rules are, and what the staff fears most about peer specialists. Then become the best answer to that fear. Curiosity and respect will open more doors than credentials ever will.","scripture":"1 Corinthians 9:22 — 'I have become all things to all people so that by all possible means I might save some.'","reflection":"Which of the four peer support settings (hospital, community outreach, criminal justice, peer-run) feels most natural to you, and why? Which feels most challenging? Write about a setting-specific challenge you anticipate — and then write down three steps you would take to prepare for it effectively."},{"day":3,"id":"3F","code":"3F","title":"Building Resilience: Peer Wellness & Sustainability","principles":["P3 — Holistic","P8 — Strengths/Responsibility"],"anecdote":"A veteran peer specialist named Evelyn had been doing the work for eleven years. Her supervisor noticed she'd stopped bringing her lunch, was staying late every day, and had started crying during team meetings. When the supervisor sat her down, Evelyn said, \"I just feel like I have to be there for everyone.\" Her supervisor said, \"Evelyn, do you know what happens when a lighthouse doesn't get maintained? It goes dark. And the ships it was supposed to guide? They crash.\" Evelyn took a two-week leave. She hiked. She prayed. She read novels. She came back and told her team: \"I thought self-care was selfish. I now believe self-care is the work. You can't guide ships in the dark.\" She became the person in the organization who gave everyone else permission to take care of themselves.","lesson":"<p>Compassion fatigue and vicarious trauma are occupational hazards in peer support work — not signs of weakness. When you spend your days sitting with people in deep pain, carrying their stories, and holding their hope, some of that weight accumulates. The question is not whether it accumulates but whether you have structures in place to process it.</p>\n<h4>Recognizing Compassion Fatigue:</h4>\n<ul>\n<li>Emotional exhaustion and feeling \"empty\" after sessions</li>\n<li>Reduced empathy — becoming numb to others' pain</li>\n<li>Physical symptoms: headaches, sleep disruption, appetite changes</li>\n<li>Cynicism or hopelessness about recovery outcomes</li>\n<li>Isolation from colleagues and personal relationships</li>\n</ul>\n<h4>A Sustainable Wellness Practice:</h4>\n<ul>\n<li><strong>Physical:</strong> Consistent sleep, movement, and nourishment — the basics that everything else runs on.</li>\n<li><strong>Emotional:</strong> Regular supervision, peer debrief, and personal therapy when needed.</li>\n<li><strong>Spiritual:</strong> Prayer, scripture, faith community, and contemplative practices that reconnect you to your source.</li>\n<li><strong>Relational:</strong> Relationships outside of peer work — people who know you as more than a peer specialist.</li>\n</ul>\n<p>RESTORE's holistic framework applies to peer specialists as much as to the people they serve. <em>You cannot give what you do not have.</em> Your wellness is not optional — it is the prerequisite for everything else. As the Psalmist wrote: \"He restores my soul.\" Restoration is a recurring need, not a one-time event. Build it into your life accordingly.</p>","quiz":[["Compassion fatigue is a sign of professional weakness in peer specialists.",false],["Vicarious trauma is an occupational hazard in peer support work.",true],["Reduced empathy and emotional numbness can be signs of compassion fatigue.",true],["Physical symptoms like sleep disruption can be signs of compassion fatigue.",true],["Self-care for peer specialists is optional and secondary to client care.",false],["Regular supervision is a recommended strategy for processing compassion fatigue.",true],["Isolation from colleagues can be a warning sign of compassion fatigue.",true],["RESTORE's holistic framework applies to peer specialists themselves.",true],["A peer specialist who experiences cynicism about recovery outcomes should ignore it.",false],["Relationships outside of peer work are part of a sustainable wellness practice.",true],["The phrase 'You cannot give what you do not have' applies to peer specialist wellness.",true],["Spiritual practices are part of RESTORE's recommended wellness framework for peer specialists.",true],["Consistent sleep and movement are foundational to peer specialist sustainability.",true],["Personal therapy is never appropriate for peer specialists.",false],["Restoration is described as a recurring need in the peer specialist's life.",true]],"proTip":"Build your self-care plan before you need it — not after you're already running on empty. Schedule your debrief calls. Put your rest days on the calendar. Pray before your sessions, not just after the hard ones. The most powerful thing you can model for the people you serve is a person who takes their own healing seriously.","scripture":"Psalm 23:3 — 'He restores my soul. He guides me along the right paths for his name's sake.'","reflection":"Honestly assess your current wellness in each of the four domains: physical, emotional/mental, spiritual, and social/relational. Where are you thriving? Where are you depleted? Write your personal Peer Wellness Plan — the non-negotiable practices you commit to maintaining as a peer specialist. Who will hold you accountable to it?"}];
+
+const S = {qa:{},qs:{},rf:{}};
+function save(){try{localStorage.setItem('rw2',JSON.stringify(S));}catch(e){}}
+function load(){try{const d=JSON.parse(localStorage.getItem('rw2')||'{}');if(d.qa)S.qa=d.qa;if(d.qs)S.qs=d.qs;if(d.rf)S.rf=d.rf;}catch(e){}}
+
+/* ─── NAV ─── */
+function showDay(id,btn){
+  document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.day-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showStab(mid,tab,el){
+  document.querySelectorAll('#card-'+mid+' .spanel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('#card-'+mid+' .stab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(mid+'-'+tab).classList.add('active');
+  if(el)el.classList.add('active');
+}
+function toggleMC(id){document.getElementById('card-'+id).classList.toggle('open');}
+
+/* ─── QUIZ ─── */
+function answerQ(mid,idx,chosen,correct){
+  if(!S.qa[mid])S.qa[mid]={};
+  if(S.qa[mid][idx]!==undefined)return;
+  S.qa[mid][idx]=chosen;save();
+  const ok=chosen===correct;
+  const item=document.getElementById('qi-'+mid+'-'+idx);
+  item.className='qi '+(ok?'correct':'incorrect');
+  const btns=item.querySelectorAll('.qbtn');
+  btns[0].className='qbtn'+(chosen===true?(ok?' sel-t':' sel-f'):'');
+  btns[1].className='qbtn'+(chosen===false?(ok?' sel-f':' sel-t'):'');
+  const fb=document.getElementById('qf-'+mid+'-'+idx);
+  fb.textContent=ok?'✓ Correct!':'✗ Answer: '+(correct?'True':'False');
+  fb.className='qi-fb '+(ok?'right':'wrong')+' show';
+}
+
+function submitQuiz(mid){
+  const m=MODULES.find(x=>x.id===mid);
+  const ans=S.qa[mid]||{};
+  let c=0;
+  m.quiz.forEach(([,a],i)=>{if(ans[i]===a)c++;});
+  S.qs[mid]={correct:c,total:15,done:true};save();
+  renderResult(mid,m,c);
+  updateCard(mid);updateGlobalProg();buildOV();
+}
+
+function resetQuiz(mid){
+  delete S.qa[mid];delete S.qs[mid];save();
+  const m=MODULES.find(x=>x.id===mid);
+  document.getElementById(mid+'-quiz').innerHTML=buildQuizHTML(m);
+  updateCard(mid);updateGlobalProg();buildOV();
+}
+
+function renderResult(mid,m,correct){
+  const pct=correct/15;
+  let cls,title;
+  if(pct>=0.87){cls='great';title='Outstanding Work! 🏆';}
+  else if(pct>=0.67){cls='good';title='Great Effort! 👍';}
+  else{cls='keep-going';title='Keep Studying! 💪';}
+  const rc=document.getElementById('rc-'+mid);
+  rc.innerHTML=`
+    <div class="result-title">${title}</div>
+    <div class="result-sub">You scored <strong>${correct} out of 15</strong> (${Math.round(pct*100)}%)</div>
+    <div class="pt-box"><div class="pt-lbl">Pro Tip</div><div class="pt-txt">${m.proTip}</div></div>
+    <div class="sc-box"><div class="sc-lbl">Scripture</div><div class="sc-txt">${m.scripture}</div></div>
+  `;
+  rc.className='result-card '+cls+' show';
+  const qs=document.getElementById('qs-'+mid);
+  if(qs)qs.textContent='Score: '+correct+' / 15';
+}
+
+/* ─── REFLECTION ─── */
+function saveRef(mid){
+  const ta=document.getElementById('rf-'+mid);
+  S.rf[mid]=ta.value;save();
+  const ind=document.getElementById('rfsaved-'+mid);
+  ind.classList.add('show');setTimeout(()=>ind.classList.remove('show'),2000);
+  updateCard(mid);updateGlobalProg();buildOV();
+}
+function countCC(mid){
+  const ta=document.getElementById('rf-'+mid);
+  const cc=document.getElementById('cc-'+mid);
+  if(cc)cc.textContent=ta.value.length+' characters';
+}
+
+/* ─── CARD STATUS ─── */
+function updateCard(mid){
+  const card=document.getElementById('card-'+mid);
+  const qdone=!!S.qs[mid]?.done;
+  const rdone=!!(S.rf[mid]||'').trim();
+  const dots=card.querySelectorAll('.sdot');
+  if(dots[0])dots[0].className='sdot'+(qdone?' done':'');
+  if(dots[1])dots[1].className='sdot'+(rdone?' done':'');
+}
+
+function updateGlobalProg(){
+  const done=MODULES.filter(m=>S.qs[m.id]?.done).length;
+  const pct=Math.round(done/MODULES.length*100);
+  document.getElementById('gfill').style.width=pct+'%';
+  document.getElementById('gtxt').textContent=done+' / '+MODULES.length;
+}
+
+function buildOV(){
+  const grid=document.getElementById('ov-grid');
+  grid.innerHTML='';
+  MODULES.forEach(m=>{
+    const qdone=S.qs[m.id]?.done;
+    const rdone=!!(S.rf[m.id]||'').trim();
+    const cls=qdone?'completed':(S.qa[m.id]?'started':'');
+    const d=document.createElement('div');
+    d.className='ov-card '+cls;
+    d.onclick=()=>goToModule(m);
+    d.innerHTML=`<div class="ov-code">Module ${m.code} — Day ${m.day}</div>
+      <div class="ov-title">${m.title}</div>
+      <div class="ov-meta">
+        <span>${qdone?'<span class=\"ov-chk\">✓</span> '+S.qs[m.id].correct+'/15':'— Quiz'}</span>
+        <span>${rdone?'<span class=\"ov-chk\">✓</span> Reflection':'— Reflection'}</span>
+      </div>`;
+    grid.appendChild(d);
+  });
+}
+
+function goToModule(m){
+  const dayMap={1:'day1',2:'day2',3:'day3'};
+  const tabIdx={1:1,2:2,3:3};
+  const tabs=document.querySelectorAll('.day-tab');
+  showDay(dayMap[m.day],tabs[tabIdx[m.day]]);
+  setTimeout(()=>{
+    const card=document.getElementById('card-'+m.id);
+    if(card){card.classList.add('open');card.scrollIntoView({behavior:'smooth',block:'center'});}
+  },180);
+}
+
+/* ─── HTML BUILDERS ─── */
+function buildQuizHTML(m){
+  const ans=S.qa[m.id]||{};
+  const qitems=m.quiz.map(([txt,correct],i)=>{
+    const given=ans[i];
+    const answered=given!==undefined;
+    const ok=answered&&(given===correct);
+    const tCls=answered&&given===true?(ok?'sel-t':'sel-f'):'';
+    const fCls=answered&&given===false?(ok?'sel-f':'sel-t'):'';
+    const fbTxt=answered?(ok?'✓ Correct!':'✗ Answer: '+(correct?'True':'False')):'';
+    const fbCls=answered?(ok?'right':'wrong'):'';
+    return `<div class="qi ${answered?(ok?'correct':'incorrect'):''}" id="qi-${m.id}-${i}">
+      <div class="qi-top">
+        <div class="qi-num">${i+1}</div>
+        <div class="qi-q">${txt}</div>
+      </div>
+      <div class="qi-btns">
+        <button class="qbtn ${tCls}" onclick="answerQ('${m.id}',${i},true,${correct})">True</button>
+        <button class="qbtn ${fCls}" onclick="answerQ('${m.id}',${i},false,${correct})">False</button>
+      </div>
+      <div class="qi-fb ${fbCls} ${fbTxt?'show':''}" id="qf-${m.id}-${i}">${fbTxt}</div>
+    </div>`;
+  }).join('');
+  const sc=S.qs[m.id];
+  return `<div class="quiz-intro">15 True or False questions. Answer each question, then click <strong>Submit Quiz</strong> to see your score, Pro Tip, and scripture encouragement.</div>
+  <div class="qlist">${qitems}</div>
+  <div class="qcontrols">
+    <button class="btn btn-navy" onclick="submitQuiz('${m.id}')">Submit Quiz</button>
+    <button class="btn btn-outline" onclick="resetQuiz('${m.id}')">Reset</button>
+    ${sc?'<span class="q-score" id="qs-'+m.id+'">Score: '+sc.correct+' / 15</span>':'<span id="qs-'+m.id+'"></span>'}
+  </div>
+  <div class="result-card${sc?.done?' '+( sc.correct/15>=0.87?'great':sc.correct/15>=0.67?'good':'keep-going')+' show':''}" id="rc-${m.id}">
+    ${sc?.done?renderResultHTML(m,sc.correct):''}
+  </div>`;
+}
+
+function renderResultHTML(m,correct){
+  const pct=correct/15;
+  const cls=pct>=0.87?'great':pct>=0.67?'good':'keep-going';
+  const title=pct>=0.87?'Outstanding Work! 🏆':pct>=0.67?'Great Effort! 👍':'Keep Studying! 💪';
+  return `<div class="result-title">${title}</div>
+    <div class="result-sub">You scored <strong>${correct} out of 15</strong> (${Math.round(pct*100)}%)</div>
+    <div class="pt-box"><div class="pt-lbl">Pro Tip</div><div class="pt-txt">${m.proTip}</div></div>
+    <div class="sc-box"><div class="sc-lbl">Scripture</div><div class="sc-txt">${m.scripture}</div></div>`;
+}
+
+function buildModuleCard(m){
+  const qdone=!!S.qs[m.id]?.done;
+  const rdone=!!(S.rf[m.id]||'').trim();
+  const saved=S.rf[m.id]||'';
+  return `<div class="mc" id="card-${m.id}">
+  <div class="mc-hdr" onclick="toggleMC('${m.id}')">
+    <div class="mc-code">Module ${m.code}</div>
+    <div class="mc-tw">
+      <div class="mc-title">${m.title}</div>
+      <div class="mc-pts">${m.principles.map(p=>'<span class="mc-pt">'+p+'</span>').join('')}</div>
+    </div>
+    <div class="mc-dots">
+      <span class="sdot${qdone?' done':''}" title="Quiz"></span>
+      <span class="sdot${rdone?' done':''}" title="Reflection"></span>
+    </div>
+    <div class="mc-chev">▼</div>
+  </div>
+  <div class="mc-body">
+    <div class="stabs">
+      <button class="stab active" onclick="showStab('${m.id}','anec',this)">😄 Story</button>
+      <button class="stab" onclick="showStab('${m.id}','lesson',this)">📚 Lesson</button>
+      <button class="stab" onclick="showStab('${m.id}','quiz',this)">✅ Quiz</button>
+      <button class="stab" onclick="showStab('${m.id}','ref',this)">✍️ Reflection</button>
+    </div>
+    <div id="${m.id}-anec" class="spanel active">
+      <div class="anec-box">
+        <div class="anec-lbl">Opening Anecdote — A Little Story Before We Begin</div>
+        <div class="anec-txt">${m.anecdote}</div>
+      </div>
+      <div class="nav-btn-wrap">
+        <button class="btn btn-gold" onclick="showStab('${m.id}','lesson',document.querySelector('#card-${m.id} .stab:nth-child(2)'))">Next: Read the Lesson →</button>
+      </div>
+    </div>
+    <div id="${m.id}-lesson" class="spanel">
+      <div class="lesson">${m.lesson}</div>
+      <div class="fn-box">
+        <div class="fn-lbl">📋 Facilitator Note</div>
+        <div class="fn-txt">This lesson is included in the Facilitator Manual. Read it before class to prepare, and review it afterward to reinforce key concepts. The opening anecdote may be read aloud to begin the session.</div>
+      </div>
+      <div class="nav-btn-wrap">
+        <button class="btn btn-gold" onclick="showStab('${m.id}','quiz',document.querySelector('#card-${m.id} .stab:nth-child(3)'))">Next: Take the Quiz →</button>
+      </div>
+    </div>
+    <div id="${m.id}-quiz" class="spanel">
+      ${buildQuizHTML(m)}
+    </div>
+    <div id="${m.id}-ref" class="spanel">
+      <div class="ref-lbl">Module Reflection</div>
+      <div class="ref-prompt">${m.reflection}</div>
+      <textarea class="ref-area" id="rf-${m.id}" placeholder="Write your reflection here — be honest, be specific, be you..." oninput="countCC('${m.id}')">${saved}</textarea>
+      <div class="cc" id="cc-${m.id}">${saved.length} characters</div>
+      <div class="save-wrap">
+        <button class="btn btn-navy" onclick="saveRef('${m.id}')">Save Reflection</button>
+        <span class="saved-ok" id="rfsaved-${m.id}">✓ Saved!</span>
+      </div>
+      <div style="margin-top:22px">
+        <div class="pt-box"><div class="pt-lbl">Pro Tip</div><div class="pt-txt">${m.proTip}</div></div>
+        <div class="sc-box" style="margin-top:12px"><div class="sc-lbl">Scripture</div><div class="sc-txt">${m.scripture}</div></div>
+      </div>
+    </div>
+  </div>
+</div>`;
+}
+
+function buildAll(){
+  load();
+  // build day grids
+  [{day:1,id:'grid-d1'},{day:2,id:'grid-d2'},{day:3,id:'grid-d3'}].forEach(({day,id})=>{
+    const g=document.getElementById(id);
+    MODULES.filter(m=>m.day===day).forEach(m=>{g.innerHTML+=buildModuleCard(m);});
+  });
+  buildOV();
+  updateGlobalProg();
+}
+
+document.addEventListener('DOMContentLoaded',buildAll);
 </script>
 </body>
 </html>
